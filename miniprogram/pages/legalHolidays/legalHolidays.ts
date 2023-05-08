@@ -4,11 +4,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        tabbars: [
-            { "text": '我的假日', "iconPath": "/assets/holidays.png", "selectedIconPath": "/assets/holidays.png" },
-            { "text": '剩余假期', "iconPath": "/assets/holidays.png", "selectedIconPath": "/assets/holidays.png" },
-            { "text": '关于我', "iconPath": "/assets/holidays.png", "selectedIconPath": "/assets/holidays.png" }
-        ]
+
     },
 
     /**

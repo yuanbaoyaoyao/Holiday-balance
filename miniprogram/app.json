@@ -3,7 +3,8 @@
         "pages/legalHolidays/legalHolidays",
         "pages/logs/logs",
         "pages/vacationRemain/vacationRemain",
-        "pages/about/about"
+        "pages/about/about",
+        "custom-tab-bar/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -15,5 +16,28 @@
     "sitemapLocation": "sitemap.json",
     "useExtendedLib": {
         "weui": true
+    },
+    "tabBar": {
+        "custom": true,
+        "color": "#000000",
+        "selectedColor": "#000000",
+        "backgroundColor": "#000000",
+        "list": [
+            {
+                "pagePath": "pages/legalHolidays/legalHolidays",
+                "text": "我的假日"
+            },
+            {
+                "pagePath": "pages/vacationRemain/vacationRemain",
+                "text": "假期余额"
+            },
+            {
+                "pagePath": "pages/about/about",
+                "text": "关于我"
+            }
+        ]
+    },
+    "usingComponents": {
+        "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
     }
 }

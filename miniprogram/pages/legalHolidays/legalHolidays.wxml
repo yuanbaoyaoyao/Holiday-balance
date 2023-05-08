@@ -1,3 +1,2 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
-<text>pages/legalHolidays/legalHolidays.wxml</text>
-<mp-tabbar list="{{tabbars}}"></mp-tabbar>
+<text>这是我的假日</text>
