@@ -5,14 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
+    weekdays: ["一", "二", "三", "四", "五", "六", "日",],
+    dateNow: ''
+  },
 
+  handleGetNowDate() {
+    let date: Date = new Date()
+    let fullDate = String(date.getFullYear) + String(date.getMonth) + String(date.getDay);
+    this.setData({
+      dateNow: fullDate
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    this.handleGetNowDate()
   },
 
   /**
@@ -28,9 +37,9 @@ Page({
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
-          selected: 1
+        selected: 1
       })
-  }
+    }
   },
 
   /**

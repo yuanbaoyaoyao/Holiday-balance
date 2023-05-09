@@ -1,4 +1,10 @@
 <!--pages/date/date.wxml-->
-<text>pages/date/date.wxml</text>
+<view class="date">
+  <view class="date-now">{{dateNow}}</view>
+  <view class="date-weekdays">
+    <view class="date-weekdays-item" wx:for="{{weekdays}}">{{item}}</view>
+  </view>
+  <view class="date-item">这是具体日期</view>
+</view>
 <!-- 防止底部自定义导航栏挡住内容 -->
 <view style="width: 100%;height: calc(100rpx + env(safe-area-inset-bottom) / 2);"></view>

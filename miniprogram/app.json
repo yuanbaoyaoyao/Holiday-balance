@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/date/date",
     "pages/legalHolidays/legalHolidays",
-    "pages/logs/logs",
     "pages/vacationRemain/vacationRemain",
     "pages/about/about",
-    "pages/date/date"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
