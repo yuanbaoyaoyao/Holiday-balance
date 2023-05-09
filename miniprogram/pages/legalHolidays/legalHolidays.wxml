@@ -1,2 +1,10 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
-<text>这是我的假日</text>
+<view class="holidays">
+  <view class="holidays-item" wx:for="{{holidays}}" wx:for-index="index" wx:for-item="item">
+    <view>{{item.name}}</view>
+    <view>{{item.date}}</view>
+    <view>{{item.count}}</view>
+  </view>
+</view>
+<!-- 防止底部自定义导航栏挡住内容 -->
+<view style="width: 100%;height: calc(100rpx + env(safe-area-inset-bottom) / 2);"></view>

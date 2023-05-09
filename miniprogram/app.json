@@ -1,41 +1,45 @@
 {
-    "pages": [
-        "pages/legalHolidays/legalHolidays",
-        "pages/logs/logs",
-        "pages/vacationRemain/vacationRemain",
-        "pages/about/about"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Weixin",
-        "navigationBarTextStyle": "black"
-    },
-    "style": "v2",
-    "sitemapLocation": "sitemap.json",
-    "useExtendedLib": {
-        "weui": true
-    },
-    "tabBar": {
-        "custom": true,
-        "color": "#000000",
-        "selectedColor": "#000000",
-        "backgroundColor": "#000000",
-        "list": [
-            {
-                "pagePath": "pages/legalHolidays/legalHolidays",
-                "text": "我的假日"
-            },
-            {
-                "pagePath": "pages/vacationRemain/vacationRemain",
-                "text": "假期余额"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "text": "关于我"
-            }
-        ]
-    },
-    "usingComponents": {
-    }
+  "pages": [
+    "pages/legalHolidays/legalHolidays",
+    "pages/logs/logs",
+    "pages/vacationRemain/vacationRemain",
+    "pages/about/about",
+    "pages/date/date"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [{
+        "pagePath": "pages/legalHolidays/legalHolidays",
+        "text": "我的假日"
+      },
+      {
+        "pagePath": "pages/date/date",
+        "text": "日期"
+      },
+      {
+        "pagePath": "pages/vacationRemain/vacationRemain",
+        "text": "假期余额"
+      },
+
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于我"
+      }
+    ]
+  },
+  "usingComponents": {}
 }

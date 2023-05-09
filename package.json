@@ -1,16 +1,14 @@
 {
-  "lazyCodeLoading":"requiredComponents",
+  "lazyCodeLoading": "requiredComponents",
   "name": "miniprogram-ts-less-quickstart",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "miniprogram-api-typings": "^2.8.3-1"
+    "miniprogram-api-typings": "^3.9.1"
   }
 }

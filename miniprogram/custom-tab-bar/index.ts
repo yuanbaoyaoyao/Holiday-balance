@@ -9,6 +9,11 @@ Component({
       selectedIconPath: "/assets/holidays.svg",
       text: "我的假日"
     }, {
+      pagePath: "/pages/date/date",
+      iconPath: "/assets/date.svg",
+      selectedIconPath: "/assets/date.svg",
+      text: "日期"
+    }, {
       pagePath: "/pages/vacationRemain/vacationRemain",
       iconPath: "/assets/remain.svg",
       selectedIconPath: "/assets/remain.svg",

@@ -4,3 +4,5 @@
     <text class="log-item">{{index + 1}}. {{log.date}}</text>
   </block>
 </view>
+<!-- 防止底部自定义导航栏挡住内容 -->
+<view style="width: 100%;height: calc(100rpx + env(safe-area-inset-bottom) / 2);"></view>
