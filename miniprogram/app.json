@@ -3,8 +3,7 @@
         "pages/legalHolidays/legalHolidays",
         "pages/logs/logs",
         "pages/vacationRemain/vacationRemain",
-        "pages/about/about",
-        "custom-tab-bar/index"
+        "pages/about/about"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -38,6 +37,5 @@
         ]
     },
     "usingComponents": {
-        "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
     }
 }
