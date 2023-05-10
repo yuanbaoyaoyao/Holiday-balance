@@ -41,7 +41,7 @@ Page({
         if (i == 0) {
           if (firstWeekDay <= j) {
             countDays++
-            lunar = getLunar(date.getFullYear(), date.getMonth() + 1, countDays);
+            lunar = getLunar(date.getFullYear(), date.getMonth() + 1,countDays);
             tempArrItem.gregorian = countDays
             tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
             tempArr.push(tempArrItem)

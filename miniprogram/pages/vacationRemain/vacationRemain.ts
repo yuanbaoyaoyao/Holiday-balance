@@ -1,18 +1,49 @@
 // pages/vacationRemain/vacationRemain.ts
+// ▒：
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        remainDays: '',
+        pastDays: ''
+    },
+    countRemainDays() {
+        let date = new Date()
+        let endTime = new Date(date.getFullYear(), 11, 31, 23, 59, 59)
+        let msPerDay = 24 * 60 * 60 * 1000
+        return Math.round((endTime.getTime() - date.getTime()) / msPerDay)
+    },
+    countPastTime() {
+        let date = new Date()
+        let startTime = new Date(date.getFullYear(), 0, 1, 0, 0, 0)
+        let msPerDay = 24 * 60 * 60 * 1000
+        return Math.round((date.getTime() - startTime) / msPerDay)
+    },
+    countWeekends() {
+        let weekendDays = 0;
+        let date = new Date()
+        for (let i = this.data.pastDays; i < 365; i++) {
+            const currentDay = new Date(date.getFullYear(), 0, i).getDay();
+            if (currentDay === 6 || currentDay === 0) {
+                weekendDays++;
+            }
+        }
+        console.log("weekendDays:", weekendDays)
+        return weekendDays;
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-
+        this.setData({
+            remainDays: this.countRemainDays(),
+            pastDays: this.countPastTime()
+        })
+        console.log("已过时间：", this.data.pastDays)
+        this.countWeekends()
     },
 
     /**

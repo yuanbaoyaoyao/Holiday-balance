@@ -17,7 +17,7 @@ Component({
       pagePath: "/pages/vacationRemain/vacationRemain",
       iconPath: "/assets/remain.svg",
       selectedIconPath: "/assets/remain.svg",
-      text: "假期余额"
+      text: "日期余额"
     }, {
       pagePath: "/pages/about/about",
       iconPath: "/assets/cat.svg",
