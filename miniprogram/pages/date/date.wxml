@@ -1,20 +1,18 @@
 <!--pages/date/date.wxml-->
 <view class="date">
-    <view class="date-now">{{dateNow}}</view>
+    <view class="date-now">{{year}}年{{month+1}}月</view>
     <view class="date-weekdays">
         <view class="date-weekdays-item" wx:for="{{weekdays}}" wx:key="index">{{item}}</view>
     </view>
-    <swiper current="{{1}}">
-        <swiper-item wx:for="{{threeMonthDates}}" wx:for-index="monthIndex" wx:for-item="dates">
-            <scroll-view scroll-y="true" style="height: 300rpx;">
-                <view class="date-arrays">
-                    <view class="date-array" wx:for="{{dates}}" wx:key="index">
-                        <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
-                            <view class="{{today==date?'date-highlight':''}}">{{date}}</view>
-                        </view>
+    <swiper easing-function="easeInCubic" current="{{swiperCurrent}}" indicator-dots="{{true}}" bindchange="handleSetDates">
+        <swiper-item wx:for="{{threeMonthDates}}" wx:for-index="monthIndex" wx:for-item="dates" wx:key="monthIndex">
+            <view class="date-arrays">
+                <view class="date-array" wx:for="{{dates}}" wx:key="index">
+                    <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
+                        <view class="{{today==date?'date-highlight':''}}">{{date}}</view>
                     </view>
                 </view>
-            </scroll-view>
+            </view>
         </swiper-item>
     </swiper>
 </view>

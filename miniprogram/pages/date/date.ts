@@ -7,20 +7,50 @@ Page({
   data: {
     weekdays: ["一", "二", "三", "四", "五", "六", "日",],
     dateNow: '',
+    year: '',
+    month: '',
+    nowYear: '',
+    nowMonth: '',
     threeMonthDates: [],
-    today: ''
+    today: '',
+    swiperCurrent: 1
+  },
+  handleSetDates(e) {
+    console.log("e.detail.current:", e.detail.current)
+    let current = e.detail.current
+    if (current == 2) {
+      this.setData({
+        month: this.data.month + 1,
+        swiperCurrent: 1
+      })
+    } else if (current == 0) {
+      this.setData({
+        month: this.data.month - 1,
+        swiperCurrent: 1
+      })
+    }
+    this.GetThreeMonthesDates()
+    console.log("month:", this.data.month)
   },
   GetNowDate() {
     let date: Date = new Date()
-    let fullDate = String(date.getFullYear()) + '年' + String(date.getMonth() + 1) + '月' + String(date.getDate()) + '日' + '星期' + String(date.getDay());
+    let year = date.getFullYear()
+    let month = date.getMonth()
+    let weekDay = date.getDay()
+    let fullDate = String(year) + '年' + String(month + 1) + '月' + '星期' + String(weekDay);
     this.setData({
-      dateNow: fullDate
+      dateNow: fullDate,
+      year: year,
+      month: month
     })
   },
   GetThreeMonthesDates() {
+    this.setData({
+      threeMonthDates: []
+    })
     const today = new Date();
-    let year = today.getFullYear()
-    let month = today.getMonth() - 1
+    let year = this.data.year
+    let month = this.data.month - 1
     for (let count = 0; count < 3; count++) {
       let dates = this.SetDates(year, month)
       this.data.threeMonthDates.push(dates)
@@ -29,6 +59,7 @@ Page({
     this.setData({
       threeMonthDates: this.data.threeMonthDates
     })
+    console.log("threeMonthDates:", this.data.threeMonthDates)
   },
   SetDates(year: number, month: number) {
     // 获取三个月的数据，前一个月、本月、后一个月
@@ -37,7 +68,6 @@ Page({
     let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
     let countDays = 0
     let datesArr = []
-    console.log("cycleNumbers:", cycleNumbers)
     for (let i = 0; i < cycleNumbers; i++) {
       let tempArr = []
       for (let j = 1; j <= 7; j++) {
