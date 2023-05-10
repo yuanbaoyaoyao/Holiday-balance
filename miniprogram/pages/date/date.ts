@@ -7,10 +7,9 @@ Page({
   data: {
     weekdays: ["一", "二", "三", "四", "五", "六", "日",],
     dateNow: '',
-    dates: [],
+    threeMonthDates: [],
     today: ''
   },
-
   GetNowDate() {
     let date: Date = new Date()
     let fullDate = String(date.getFullYear()) + '年' + String(date.getMonth() + 1) + '月' + String(date.getDate()) + '日' + '星期' + String(date.getDay());
@@ -18,9 +17,23 @@ Page({
       dateNow: fullDate
     })
   },
-  SetDates() {
-    let firstWeekDay = this.GetMonthFirstWeekDay()
-    let lastDayOfMonth = this.GetMonthLastDay()
+  GetThreeMonthesDates() {
+    const today = new Date();
+    let year = today.getFullYear()
+    let month = today.getMonth() - 1
+    for (let count = 0; count < 3; count++) {
+      let dates = this.SetDates(year, month)
+      this.data.threeMonthDates.push(dates)
+      month++
+    }
+    this.setData({
+      threeMonthDates: this.data.threeMonthDates
+    })
+  },
+  SetDates(year: number, month: number) {
+    // 获取三个月的数据，前一个月、本月、后一个月
+    let firstWeekDay = this.GetMonthFirstWeekDay(year, month)
+    let lastDayOfMonth = this.GetMonthLastDay(year, month)
     let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
     let countDays = 0
     let datesArr = []
@@ -45,22 +58,18 @@ Page({
       }
       datesArr.push(tempArr)
     }
-    this.setData({
-      dates: datesArr
-    })
-    console.log("this.date.dates:", this.data.dates)
+    return datesArr
   },
 
-  GetMonthFirstWeekDay() {
-    const today = new Date();
-    const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+  //特殊点12月、1月
+  GetMonthFirstWeekDay(year: number, month: number) {
+    const firstDayOfMonth = new Date(year, month, 1);
     const dayOfWeek = firstDayOfMonth.getDay();
     console.log("dayOfWeek:", dayOfWeek)
     return dayOfWeek;
   },
-  GetMonthLastDay() {
-    const today = new Date();
-    const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+  GetMonthLastDay(year: number, month: number) {
+    const lastDayOfMonth = new Date(year, month + 1, 0).getDate();
     console.log("lastDayOfMonth:", lastDayOfMonth)
     return lastDayOfMonth
   },
@@ -86,7 +95,7 @@ Page({
     this.setData({
       today: new Date().getDate()
     })
-    this.SetDates()
+    this.GetThreeMonthesDates()
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
         selected: 1
