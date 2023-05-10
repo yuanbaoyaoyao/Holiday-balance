@@ -1,3 +1,4 @@
+import { getLunar } from "chinese-lunar-calendar";
 // pages/date/date.ts
 Page({
 
@@ -12,13 +13,18 @@ Page({
   },
 
   GetNowDate() {
-    let date: Date = new Date()
+    let date = new Date()
+    const lunar = getLunar(date.getFullYear(), date.getMonth() + 1, date.getDate());
+    console.log("getDate:", date.getDate())
+    console.log("今天的农历为lunar.lunarDay：", lunar.dateStr.substr(-2, 2))
     let fullDate = String(date.getFullYear()) + '年' + String(date.getMonth() + 1) + '月' + String(date.getDate()) + '日' + '星期' + String(date.getDay());
     this.setData({
       dateNow: fullDate
     })
   },
   SetDates() {
+    let date = new Date()
+    let lunar
     let firstWeekDay = this.GetMonthFirstWeekDay()
     let lastDayOfMonth = this.GetMonthLastDay()
     let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
@@ -28,16 +34,26 @@ Page({
     for (let i = 0; i < cycleNumbers; i++) {
       let tempArr = []
       for (let j = 1; j <= 7; j++) {
+        let tempArrItem = {
+          gregorian: '',
+          lunar: ''
+        }
         if (i == 0) {
           if (firstWeekDay <= j) {
             countDays++
-            tempArr.push(countDays)
+            lunar = getLunar(date.getFullYear(), date.getMonth() + 1, countDays);
+            tempArrItem.gregorian = countDays
+            tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+            tempArr.push(tempArrItem)
           } else {
             tempArr.push("")
           }
         } else if (countDays < lastDayOfMonth) {
           countDays++
-          tempArr.push(countDays)
+          lunar = getLunar(date.getFullYear(), date.getMonth() + 1, countDays);
+          tempArrItem.gregorian = countDays
+          tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+          tempArr.push(tempArrItem)
         } else if (countDays >= lastDayOfMonth) {
           countDays++
           tempArr.push("")

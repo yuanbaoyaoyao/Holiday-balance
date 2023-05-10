@@ -5,10 +5,11 @@
         <view class="date-weekdays-item" wx:for="{{weekdays}}" wx:key="index">{{item}}</view>
     </view>
     <view class="date-arrays">
-        <scroll-view scroll-y="true" style="height: 300rpx;">
+        <scroll-view scroll-y="true">
             <view class="date-array" wx:for="{{dates}}" wx:key="index">
                 <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
-                    <view class="{{today==date?'date-highlight':''}}">{{date}}</view>
+                    <view class="{{today==date?'date-highlight':''}}">{{date.gregorian}}</view>
+                    <view class="{{today==date?'date-highlight':''}}">{{date.lunar}}</view>
                 </view>
             </view>
         </scroll-view>
