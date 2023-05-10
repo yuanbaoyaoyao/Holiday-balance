@@ -7,7 +7,9 @@
     <view class="date-arrays">
         <scroll-view scroll-y="true" style="height: 300rpx;">
             <view class="date-array" wx:for="{{dates}}" wx:key="index">
-                <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="dates" wx:key="itemIndex">{{dates}}</view>
+                <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
+                    <view class="{{today==date?'date-highlight':''}}">{{date}}</view>
+                </view>
             </view>
         </scroll-view>
     </view>

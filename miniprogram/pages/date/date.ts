@@ -7,7 +7,8 @@ Page({
   data: {
     weekdays: ["一", "二", "三", "四", "五", "六", "日",],
     dateNow: '',
-    dates: []
+    dates: [],
+    today: ''
   },
 
   GetNowDate() {
@@ -17,7 +18,7 @@ Page({
       dateNow: fullDate
     })
   },
-  setDates() {
+  SetDates() {
     let firstWeekDay = this.GetMonthFirstWeekDay()
     let lastDayOfMonth = this.GetMonthLastDay()
     let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
@@ -82,7 +83,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.setDates()
+    this.setData({
+      today: new Date().getDate()
+    })
+    this.SetDates()
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
         selected: 1
