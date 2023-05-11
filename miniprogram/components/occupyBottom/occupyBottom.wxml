@@ -1,2 +1,2 @@
 <!--components/occupyBottom/occupyBottom.wxml-->
-<view style="width: 100%;height: calc(100rpx + env(safe-area-inset-bottom) / 2);"></view>
+<view style="width: 100%;height: calc(60px + env(safe-area-inset-bottom) / 2);"></view>
