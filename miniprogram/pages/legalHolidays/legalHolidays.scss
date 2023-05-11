@@ -18,21 +18,25 @@
 }
 
 .rain-container {
-  overflow: hidden !important;
   position: relative;
+  overflow: hidden !important;
 }
 
 .rain {
-  z-index: 99;
+  z-index: 999;
   width: var(--size);
   height: var(--hsize);
   --size: 2px;
+  position: absolute;
   border-radius: 200% 200% 0 0;
-  position: fixed;
-  background-color: black;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.8)
+  );
 }
 
-@for $i from 1 through 200 {
+@for $i from 1 through 20 {
   .rain:nth-child(#{$i}) {
     --size: #{random(10) * 0.2}px;
     --hsize: #{random(3) * 12}px;
@@ -46,7 +50,7 @@
 
 @keyframes rain {
   0% {
-    transform: translate3d(var(--left-ini), 0, 0);
+    transform: translate3d(var(--left-ini), -20vh, 0);
   }
 
   75% {
