@@ -5,12 +5,13 @@ Page({
      */
     data: {
         holidays: [
-            { name: "元旦", date: "12月31日至1月2日", count: "3天" },
-            { name: "春节", date: "1月21日至1月27日", count: "3天" },
-            { name: "清明节", date: "4月5日", count: "3天" },
-            { name: "劳动节", date: "4月29日至5月3日", count: "5天" },
-            { name: "端午节", date: "6月22日至6月24日", count: "3天" },
-            { name: "中秋/国庆节", date: "6月22日至6月24日", count: "8天" },
+            { name: "元旦", date: "12月31日至1月2日", count: "3天", color: "#FFF6DD" },
+            { name: "春节", date: "1月21日至1月27日", count: "3天", color: "#9ED55E" },
+            { name: "清明节", date: "4月5日", count: "3天", color: "#99DAC2" },
+            { name: "劳动节", date: "4月29日至5月3日", count: "5天", color: "#76A7FA" },
+            { name: "端午节", date: "6月22日至6月24日", count: "3天", color: "#B1C5AC" },
+            { name: "中秋节", date: "6月22日至6月24日", count: "8天", color: "#FFFD0A" },
+            { name: "国庆节", date: "6月22日至6月24日", count: "8天", color: "#FE0000" },
         ]
     },
 
