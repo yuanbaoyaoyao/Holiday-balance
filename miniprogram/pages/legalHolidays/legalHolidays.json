@@ -1,4 +1,5 @@
 {
     "usingComponents": {
+      "occupy-bottom": "/components/occupyBottom/occupyBottom"
     }
   }

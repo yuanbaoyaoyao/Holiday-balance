@@ -1,13 +1,17 @@
 /* custom-tab-bar/index.wxss */
 .tab-bar {
   position: fixed;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   right: 0;
   height: 48px;
   background: white;
   display: flex;
   padding-bottom: env(safe-area-inset-bottom);
+  // opacity: 0.8;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 20px;
 }
 
 .tab-bar-border {
