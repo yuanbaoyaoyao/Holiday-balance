@@ -12,7 +12,47 @@ Page({
             { name: "端午节", date: "6月22日至6月24日", count: "3天", color: "#B1C5AC" },
             { name: "中秋节", date: "6月22日至6月24日", count: "8天", color: "#FFFD0A" },
             { name: "国庆节", date: "6月22日至6月24日", count: "8天", color: "#FE0000" },
-        ]
+        ],
+        show: false,
+        buttons: [
+            {
+                type: 'default',
+                className: '',
+                text: '辅助操作',
+                value: 0
+            },
+            {
+                type: 'primary',
+                className: '',
+                text: '主操作',
+                value: 1
+            }
+        ],
+        savedFilePath: ''
+    },
+    chooseImage: function () {
+        wx.chooseMedia({
+            success: this.saveImage
+        })
+    },
+    saveImage: function (res) {
+        let that = this
+        const tempFilePaths = res.tempFiles[0].tempFilePath
+        wx.getFileSystemManager().saveFile({
+            tempFilePath: tempFilePaths,
+            success: function (res) {
+                that.setData({ savedFilePath: res.savedFilePath })
+            }
+        })
+    },
+    buttontap(e) {
+        console.log(e.detail)
+    },
+    handleTapView() {
+        console.log("点击了画面")
+        this.setData({
+            show: true
+        })
     },
 
     /**

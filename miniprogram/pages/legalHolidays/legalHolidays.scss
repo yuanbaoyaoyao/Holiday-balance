@@ -5,4 +5,80 @@
   height: 200rpx;
   padding: 30rpx;
   border-radius: 30rpx;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.holidays-half-screen-dialog {
+  z-index: 100000;
+}
+
+.holidays-preview-box {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+}
+
+.rain-container{
+  width: 100vw;
+  height: 100vh;
+  // 宽高,vw 视窗宽度的百分比(1vw等于1%) vh 视窗高度的百分比
+  overflow: hidden;
+  //   溢出隐藏
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+.rain {
+  width: var(--size);
+  height: var(--hsize);
+  --size: 2px;
+  //   声明变量,规定宽
+  border-radius: 200% 200% 0 0;
+  //   边框圆角
+  position: absolute;
+  //   绝对定位
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.6));
+  // 创建一个表示两种或多种颜色线性渐变的图片
+}
+
+@for $i from 1 through 200 {
+
+  // .@for $var from <start> through <end>:
+  // 此种方式的遍历索引区间是[start,end]
+  // 这里的200相当于速度
+  .rain:nth-child(#{$i}) {
+    --size: #{random(10) * 0.2}px;
+    --hsize: #{random(3) * 12}px;
+    //  调整宽高
+    --left-ini: #{random(20) - 10}vw;
+    --left-end: #{random(20) - 10}vw;
+    //  random(20) - 10  20以内的随机数减10
+    left: #{random(100)}vw;
+    //  也是随机数,定位的随机偏移
+    animation: rain #{0.5 + random(4)}s linear -#{random(10)}s infinite;
+    //  添加动画
+  }
+}
+
+@keyframes rain {
+  0% {
+    transform: translate3d(var(--left-ini), 0, 0);
+    //  创建变量,与上面相对应,translate 位移
+  }
+
+  75% {
+    transform: translate3d(var(--left-ini), 100vh, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--left-end), 100vh, 0);
+  }
+}
+
+.rain:nth-child(6n) {
+  // 三行交替,滤镜模糊效果
+  filter: blur(1px);
 }
