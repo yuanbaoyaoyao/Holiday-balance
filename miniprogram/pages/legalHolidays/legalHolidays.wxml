@@ -1,10 +1,19 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
-<view class="holidays">
+<view class="holidays" style="z-index: 100;">
   <block wx:for="{{holidays}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-    <view class="holidays-item" style="background-color: {{item.color}};" bindtap="handleTapView">
+    <view class="holidays-item {{item.name!='清明节'?'rain-container':''}}" style="background-color: {{item.color}};background-image: url({{item.image}});" bindtap="handleTapView">
       <view>{{item.name}}</view>
       <view>{{item.date}}</view>
       <view>{{item.count}}</view>
+      <view class="rain"></view>
+      <view class="rain"></view>
+      <view class="rain"></view>
+      <view class="rain"></view>
+      <view class="rain"></view>
+      <view class="rain"></view>
+      <view class="rain"></view>
+      <view class="rain"></view>
+      <view class="rain"></view>
     </view>
   </block>
 </view>
@@ -13,19 +22,5 @@
     <image wx:if="{{savedFilePath!=''}}" class="holidays-preview" src="{{savedFilePath}}" mode="aspectFit"></image>
   </view>
 </mp-half-screen-dialog>
-<view class="rain-container">
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-  <div class="rain"></div>
-</view>
 <!-- 防止底部自定义导航栏挡住内容 -->
 <occupy-bottom></occupy-bottom>
