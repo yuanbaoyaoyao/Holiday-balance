@@ -43,7 +43,7 @@
     --left-ini: #{random(20) - 10}vw;
     --left-end: #{random(20) - 10}vw;
     left: #{random(100)}vw;
-    animation: rain #{0.5 + random(4)}s linear -#{random(10)}s infinite;
+    animation: rain #{0.5 + random(2)}s linear -#{random(10)}s infinite;
   }
 }
 
@@ -62,7 +62,7 @@
   }
 }
 
-.rain:nth-child(6n) {
+.rain:nth-child(12n) {
   // 三行交替,滤镜模糊效果
   filter: blur(1px);
 }
