@@ -1,4 +1,5 @@
 // pages/legalHolidays/legalHolidays.ts
+//TODO 把图片变成动态图片，劳动节那个手变成点赞
 Page({
     /**
      * 页面的初始数据
@@ -11,7 +12,7 @@ Page({
             { name: "劳动节", date: "4月29日至5月3日", count: "5天", color: "#76A7FA", image: "/assets/laborDay.svg" },
             { name: "端午节", date: "6月22日至6月24日", count: "3天", color: "#B1C5AC", image: "/assets/zongzi.svg" },
             { name: "中秋节", date: "6月22日至6月24日", count: "8天", color: "#FFFD0A", image: "/assets/midAutumn.svg" },
-            { name: "国庆节", date: "6月22日至6月24日", count: "8天", color: "#FE0000", image: "/assets/celebrate.svg" },
+            { name: "国庆节", date: "6月22日至6月24日", count: "8天", color: "#FB7A5A", image: "/assets/celebrate.svg" },
         ],
         show: false,
         buttons: [
