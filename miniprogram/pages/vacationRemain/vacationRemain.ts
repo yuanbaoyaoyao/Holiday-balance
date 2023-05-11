@@ -7,7 +7,13 @@ Page({
      */
     data: {
         remainDays: '',
-        pastDays: ''
+        pastDays: '',
+        weekendInfo: {
+            weekendDays: 0,
+            remainWeekendDays: 0,
+        },
+        //国家法定节假日
+        holidays:11
     },
     countRemainDays() {
         let date = new Date()
@@ -27,11 +33,16 @@ Page({
         for (let i = this.data.pastDays; i < 365; i++) {
             const currentDay = new Date(date.getFullYear(), 0, i).getDay();
             if (currentDay === 6 || currentDay === 0) {
-                weekendDays++;
+                this.data.weekendInfo.remainWeekendDays++;
             }
         }
-        console.log("weekendDays:", weekendDays)
-        return weekendDays;
+        for (let i = 0; i < 365; i++) {
+            const currentDay = new Date(date.getFullYear(), 0, i).getDay();
+            if (currentDay === 6 || currentDay === 0) {
+                this.data.weekendInfo.weekendDays++;
+            }
+        }
+        this.setData({ weekendInfo: this.data.weekendInfo })
     },
 
     /**

@@ -37,3 +37,6 @@
 .tab-bar-item view {
   font-size: 10px;
 }
+.tab-bar-border{
+  background-color: white;
+}
