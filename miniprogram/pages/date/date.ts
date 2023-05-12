@@ -7,15 +7,15 @@ Page({
    */
   data: {
     weekdays: ["一", "二", "三", "四", "五", "六", "日",],
-    monthNow: [],
+    yearMonths: [],
     datesOfYear: [],
     today: '',
+    monthNow: '',
     isAllShow: false
   },
-
-  GetNowDate(year, month) {
+  GetYearMonths(year, month) {
     let fullDate = String(year) + '年' + String(month) + '月';
-    this.data.monthNow.push(fullDate)
+    this.data.yearMonths.push(fullDate)
   },
   setDatesOfYear() {
     this.data.datesOfYear = []
@@ -27,12 +27,12 @@ Page({
     }
     this.setData({
       datesOfYear: datesOfYear,
-      monthNow: this.data.monthNow
+      yearMonths: this.data.yearMonths
     })
     console.log("this.data.datesOfYear:", this.data.datesOfYear)
   },
   SetDates(year, month) {
-    this.GetNowDate(year, month)
+    this.GetYearMonths(year, month)
     let firstWeekDay = this.GetMonthFirstWeekDay(year, month)
     let lastDayOfMonth = this.GetMonthLastDay(year, month)
     let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
@@ -119,7 +119,8 @@ Page({
    */
   onShow() {
     this.setData({
-      today: new Date().getDate()
+      today: new Date().getDate(),
+      monthNow: new Date().getMonth() + 1
     })
     this.setDatesOfYear()
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
