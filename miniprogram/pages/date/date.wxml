@@ -1,21 +1,28 @@
 <!--pages/date/date.wxml-->
 <view class="date">
-    <view class="date-now">{{dateNow}}</view>
-    <view class="date-weekdays">
-        <view class="date-weekdays-item" wx:for="{{weekdays}}" wx:key="index">{{item}}</view>
-    </view>
-    <view class="date-arrays">
-        <scroll-view scroll-y="true">
-            <view class="date-array" wx:for="{{dates}}" wx:key="index">
-                <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
-                    <view class="{{today==date.gregorian?'date-highlight':''}}">
-                        <view>{{date.gregorian}}</view>
-                        <view>{{date.lunar}}</view>
+    <block wx:for="{{datesOfYear}}" wx:key="index" wx:for-item="dates">
+        <view class="date-now">
+            <text>{{monthNow[index]}}</text>
+        </view>
+        <view class="date-weekdays">
+            <view class="date-weekdays-item" wx:for="{{weekdays}}" wx:key="index">{{item}}</view>
+        </view>
+        <view class="date-arrays">
+            <scroll-view scroll-y="true">
+                <view class="date-array" wx:for="{{dates}}" wx:key="index">
+                    <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
+                        <view class="{{today==date.gregorian?'date-highlight':''}} date-item-info">
+                            <text class="date-item-gregorian">{{date.gregorian}}</text>
+                            <text class="date-item-lunar">{{date.lunar}}</text>
+                        </view>
                     </view>
                 </view>
-            </view>
-        </scroll-view>
-    </view>
+            </scroll-view>
+        </view>
+        <!-- <view class="date-analysis">
+        <text>本月放假共10天，剩余10天</text>
+    </view> -->
+    </block>
 </view>
 <!-- 防止底部自定义导航栏挡住内容 -->
 <occupy-bottom></occupy-bottom>

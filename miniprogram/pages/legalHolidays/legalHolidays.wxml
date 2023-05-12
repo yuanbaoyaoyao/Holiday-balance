@@ -1,7 +1,7 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
 <view class="holidays" style="z-index: 100;">
     <block wx:for="{{holidays}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-        <view class="holidays-item {{item.name=='清明节'?'rain-container':''}}" style="background-color: {{item.color}};background-image: url({{item.image}});" bindtap="handleTapView">
+        <view class="holidays-item {{item.name=='清明节'?'rain-container':''}}" style="background-color: {{item.color}};background-size: cover;background-image: url({{item.image}});" bindtap="handleTapView">
             <view>{{item.name}}</view>
             <view>{{item.date}}</view>
             <view>{{item.count}}</view>
@@ -11,9 +11,15 @@
         </view>
     </block>
 </view>
-<mp-half-screen-dialog extClass="holidays-half-screen-dialog" bindbuttontap="buttontap" show="{{show}}" title="测试标题B" subTitle="测试标题B的副标题" desc="辅助描述内容，可根据实际需要安排" tips="辅助提示内容，可根据实际需要安排" buttons="{{buttons}}">
-    <view slot="title" class="holidays-preview-box" bindtap="chooseImage">
-        <image wx:if="{{savedFilePath!=''}}" class="holidays-preview" src="{{savedFilePath}}" mode="aspectFit"></image>
+<mp-half-screen-dialog extClass="holidays-half-screen-dialog" bindbuttontap="buttontap" show="{{show}}" title="自定义" subTitle="" desc="" tips="" buttons="{{buttons}}">
+    <view slot="desc" class="holidays-preview-box" bindtap="chooseImage">
+        <view>
+            <text>自定义背景图片</text>
+            <image wx:if="{{savedFilePath!=''}}" class="holidays-preview" src="{{savedFilePath}}" mode="aspectFit"></image>
+        </view>
+        <view>
+            <text>自定义背景颜色</text>
+        </view>
     </view>
 </mp-half-screen-dialog>
 <!-- 防止底部自定义导航栏挡住内容 -->

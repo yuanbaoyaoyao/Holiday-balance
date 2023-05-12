@@ -6,7 +6,7 @@ Page({
      */
     data: {
         holidays: [
-            { name: "元旦", date: "12月31日至1月2日", count: "3天", color: "#FFF6DD", image: "/assets/newYearDay.svg" },
+            { name: "元旦", date: "12月31日至1月2日", count: "3天", color: "#FFF6DD", image: "/assets/newYearDay2.svg" },
             { name: "春节", date: "1月21日至1月27日", count: "3天", color: "#9ED55E", image: "/assets/springFestival.jpg" },
             { name: "清明节", date: "4月5日", count: "3天", color: "#99DAC2" },
             { name: "劳动节", date: "4月29日至5月3日", count: "5天", color: "#76A7FA", image: "/assets/laborDay.svg" },

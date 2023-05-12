@@ -7,50 +7,74 @@ Page({
    */
   data: {
     weekdays: ["一", "二", "三", "四", "五", "六", "日",],
-    dateNow: '',
-    dates: [],
-    today: ''
+    monthNow: [],
+    // dates: [],
+    datesOfYear: [],
+    today: '',
+    isAllShow: false
   },
 
-  GetNowDate() {
-    let date = new Date()
-    const lunar = getLunar(date.getFullYear(), date.getMonth() + 1, date.getDate());
-    console.log("getDate:", date.getDate())
-    console.log("今天的农历为lunar.lunarDay：", lunar.dateStr.substr(-2, 2))
-    let fullDate = String(date.getFullYear()) + '年' + String(date.getMonth() + 1) + '月' + String(date.getDate()) + '日' + '星期' + String(date.getDay());
-    this.setData({
-      dateNow: fullDate
-    })
+  GetNowDate(year, month) {
+    let fullDate = String(year) + '年' + String(month) + '月';
+    this.data.monthNow.push(fullDate)
   },
-  SetDates() {
-    let date = new Date()
+  setDatesOfYear() {
+    this.data.datesOfYear = []
+    const year = new Date().getFullYear()
+    let datesOfYear = []
+    for (let i = 1; i <= 12; i++) {
+      let dates = this.SetDates(year, i)
+      datesOfYear.push(dates)
+    }
+    this.setData({
+      datesOfYear: datesOfYear,
+      monthNow: this.data.monthNow
+    })
+    console.log("this.data.datesOfYear:", this.data.datesOfYear)
+  },
+  SetDates(year, month) {
+    this.GetNowDate(year, month)
     let lunar
-    let firstWeekDay = this.GetMonthFirstWeekDay()
-    let lastDayOfMonth = this.GetMonthLastDay()
+    let firstWeekDay = this.GetMonthFirstWeekDay(year, month)
+    let lastDayOfMonth = this.GetMonthLastDay(year, month)
     let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
     let countDays = 0
     let datesArr = []
     console.log("cycleNumbers:", cycleNumbers)
-    for (let i = 0; i < cycleNumbers; i++) {
+    for (let i = 0; i <= cycleNumbers; i++) {
       let tempArr = []
-      for (let j = 1; j <= 7; j++) {
+      for (let j = 0; j < 7; j++) {
         let tempArrItem = {
           gregorian: '',
           lunar: ''
         }
         if (i == 0) {
-          if (firstWeekDay <= j) {
-            countDays++
-            lunar = getLunar(date.getFullYear(), date.getMonth() + 1,countDays);
-            tempArrItem.gregorian = countDays
-            tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
-            tempArr.push(tempArrItem)
+          //firstWeekDay为0 需要特殊处理
+          if (firstWeekDay == 0) {
+            if (j < 6) {
+              tempArr.push("")
+            } else {
+              countDays++
+              lunar = getLunar(year, month, countDays);
+              tempArrItem.gregorian = countDays
+              tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+              tempArr.push(tempArrItem)
+            }
           } else {
-            tempArr.push("")
+            if (firstWeekDay <= j + 1) {
+              countDays++
+              lunar = getLunar(year, month, countDays);
+              tempArrItem.gregorian = countDays
+              tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+              tempArr.push(tempArrItem)
+            } else {
+              tempArr.push("")
+            }
           }
-        } else if (countDays < lastDayOfMonth) {
+        }
+        else if (countDays < lastDayOfMonth) {
           countDays++
-          lunar = getLunar(date.getFullYear(), date.getMonth() + 1, countDays);
+          lunar = getLunar(year, month, countDays);
           tempArrItem.gregorian = countDays
           tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
           tempArr.push(tempArrItem)
@@ -61,22 +85,20 @@ Page({
       }
       datesArr.push(tempArr)
     }
-    this.setData({
-      dates: datesArr
-    })
-    console.log("this.date.dates:", this.data.dates)
+    return datesArr
   },
 
-  GetMonthFirstWeekDay() {
+  GetMonthFirstWeekDay(year, month) {
     const today = new Date();
-    const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    const firstDayOfMonth = new Date(year, month - 1, 1);
+    console.log("firstDayOfMonth:", firstDayOfMonth)
     const dayOfWeek = firstDayOfMonth.getDay();
     console.log("dayOfWeek:", dayOfWeek)
     return dayOfWeek;
   },
-  GetMonthLastDay() {
+  GetMonthLastDay(year, month) {
     const today = new Date();
-    const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+    const lastDayOfMonth = new Date(year, month, 0).getDate();
     console.log("lastDayOfMonth:", lastDayOfMonth)
     return lastDayOfMonth
   },
@@ -85,7 +107,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.GetNowDate()
   },
 
   /**
@@ -102,7 +123,7 @@ Page({
     this.setData({
       today: new Date().getDate()
     })
-    this.SetDates()
+    this.setDatesOfYear()
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
         selected: 1
