@@ -32,12 +32,12 @@ Page({
     const year = new Date().getFullYear()
     let datesOfYear = []
     if (e != undefined && this.data.isAllShow == false) {
-      this.data.isAllShow = true
+      this.setData({ isAllShow: true })
       let index = e.currentTarget.dataset.index + 1
       let dates = this.SetDates(year, index)
       datesOfYear.push(dates)
     } else {
-      this.data.isAllShow = false
+      this.setData({ isAllShow: false })
       for (let i = 1; i <= 12; i++) {
         let dates = this.SetDates(year, i)
         datesOfYear.push(dates)
@@ -116,6 +116,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+    this.setData({
+      today: new Date().getDate(),
+      monthNow: new Date().getMonth() + 1
+    })
+    this.setDatesOfYear()
   },
 
   /**
@@ -129,11 +134,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.setData({
-      today: new Date().getDate(),
-      monthNow: new Date().getMonth() + 1
-    })
-    this.setDatesOfYear()
+
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
         selected: 1

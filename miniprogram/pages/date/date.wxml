@@ -15,7 +15,11 @@
                     <view class="date-array">
                         <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
                             <view class="{{today==date.gregorian&&monthNow==index+1?'date-highlight':''}} date-item-info">
-                                <text class="date-item-gregorian">{{date.gregorian}}</text>
+                                <view class="date-item-gregorian">
+                                    {{date.gregorian}}
+                                    <text class="date-item-gregorian-highLight-work">班</text>
+                                    <!-- <text class="date-item-gregorian-highLight-reset">休</text> -->
+                                </view>
                                 <text class="date-item-lunar">{{date.lunar}}</text>
                             </view>
                         </view>
@@ -23,9 +27,9 @@
                 </block>
             </scroll-view>
         </view>
-        <!-- <view class="date-analysis">
-        <text>本月放假共10天，剩余10天</text>
-    </view> -->
+        <view class="date-analysis" wx:if="{{isAllShow}}">
+            <text>本月放假共10天，剩余10天</text>
+        </view>
     </block>
 </view>
 <!-- 防止底部自定义导航栏挡住内容 -->

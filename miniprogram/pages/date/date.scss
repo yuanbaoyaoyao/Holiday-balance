@@ -52,10 +52,27 @@ $weekday-size:10px;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .date-item-gregorian {
   font-size: 20px;
+  width: 20px !important;
+}
+
+.date-item-gregorian-highLight-work,
+.date-item-gregorian-highLight-reset {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 8px;
+}
+
+.date-item-gregorian-highLight-reset {
+  color: #61AA59;
+}
+.date-item-gregorian-highLight-work {
+  color: #CC7651;
 }
 
 .date-item-lunar {
