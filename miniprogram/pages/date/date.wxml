@@ -1,5 +1,7 @@
 <!--pages/date/date.wxml-->
-<view class="date">
+<import src="date.skeleton.wxml" />
+<template is="skeleton" wx-if="{{loading}}" />
+<view class="date" wx:if="{{!loading}}">
     <block wx:for="{{datesOfYear}}" wx:key="index" wx:for-item="dates">
         <view class="date-now" bindtap="setDatesOfYear" data-index="{{index}}">
             <text>{{yearMonths[index]}}</text>

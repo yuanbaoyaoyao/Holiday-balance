@@ -11,13 +11,22 @@ Page({
     datesOfYear: [],
     today: '',
     monthNow: '',
-    isAllShow: false
+    isAllShow: false,
+    loading: false
   },
   GetYearMonths(year, month) {
     let fullDate = String(year) + '年' + String(month) + '月';
     this.data.yearMonths.push(fullDate)
   },
   setDatesOfYear(e) {
+    this.setData({
+      loading: true
+    })
+    setTimeout(() => {
+      this.setData({
+        loading: false
+      })
+    }, 500);
     this.data.yearMonths = []
     this.data.datesOfYear = []
     const year = new Date().getFullYear()
@@ -38,7 +47,6 @@ Page({
       datesOfYear: datesOfYear,
       yearMonths: this.data.yearMonths
     })
-    console.log("this.data.datesOfYear:", this.data.datesOfYear)
   },
   SetDates(year, month) {
     this.GetYearMonths(year, month)

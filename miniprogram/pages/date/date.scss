@@ -1,5 +1,6 @@
 /* pages/date/date.wxss */
 //实现点击月份，切换整理和对应月份，渐变透明消失
+@import "./date.skeleton.wxss";
 $weekday-size:10px;
 
 .date-now {

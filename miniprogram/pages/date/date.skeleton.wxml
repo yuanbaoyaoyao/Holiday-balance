@@ -1,0 +1,879 @@
+<!--
+此文件为开发者工具生成，生成时间: 2023/5/12 下午2:21:32
+使用方法：
+在 D:\code\project\mine\frontEnd\wx\Holiday-balance\miniprogram\pages\date\date.wxml 引入模板
+
+```
+<import src="date.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 D:\code\project\mine\frontEnd\wx\Holiday-balance\miniprogram\pages\date\date.wxss 中引入样式
+```
+@import "./date.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="date">
+      <view class="date-now" data-index="0">
+        <text class="sk-transparent sk-text-18-7500-593 sk-text">2023年1月</text>
+      </view>
+      <view class="date-weekdays">
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-452 sk-text" style="background-position-x: 50%;">一</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-778 sk-text" style="background-position-x: 50%;">二</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-96 sk-text" style="background-position-x: 50%;">三</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-38 sk-text" style="background-position-x: 50%;">四</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-277 sk-text" style="background-position-x: 50%;">五</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-543 sk-text" style="background-position-x: 50%;">六</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-276 sk-text" style="background-position-x: 50%;">日</view>
+      </view>
+      <view class="date-arrays">
+        <scroll-view scroll-y="true">
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">1</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-343 sk-text" style="background-position-x: 50%;">初十</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">2</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-293 sk-text" style="background-position-x: 50%;">十一</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">3</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-855 sk-text" style="background-position-x: 50%;">十二</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">4</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-571 sk-text" style="background-position-x: 50%;">十三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">5</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-443 sk-text" style="background-position-x: 50%;">十四</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">6</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-501 sk-text" style="background-position-x: 50%;">十五</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">7</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-462 sk-text" style="background-position-x: 50%;">十六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">8</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-832 sk-text" style="background-position-x: 50%;">十七</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">9</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-311 sk-text" style="background-position-x: 50%;">十八</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-424 sk-text" style="background-position-x: 50%;">10</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-857 sk-text" style="background-position-x: 50%;">十九</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-804 sk-text" style="background-position-x: 50%;">11</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-340 sk-text" style="background-position-x: 50%;">廿十</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-185 sk-text" style="background-position-x: 50%;">12</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-742 sk-text" style="background-position-x: 50%;">廿一</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-760 sk-text" style="background-position-x: 50%;">13</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-925 sk-text" style="background-position-x: 50%;">廿二</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-248 sk-text" style="background-position-x: 50%;">14</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-341 sk-text" style="background-position-x: 50%;">廿三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-61 sk-text" style="background-position-x: 50%;">15</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-757 sk-text" style="background-position-x: 50%;">廿四</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-20 sk-text" style="background-position-x: 50%;">16</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-884 sk-text" style="background-position-x: 50%;">廿五</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-95 sk-text" style="background-position-x: 50%;">17</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-596 sk-text" style="background-position-x: 50%;">廿六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-425 sk-text" style="background-position-x: 50%;">18</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-215 sk-text" style="background-position-x: 50%;">廿七</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-275 sk-text" style="background-position-x: 50%;">19</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-380 sk-text" style="background-position-x: 50%;">廿八</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-330 sk-text" style="background-position-x: 50%;">20</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-437 sk-text" style="background-position-x: 50%;">廿九</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-981 sk-text" style="background-position-x: 50%;">21</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-918 sk-text" style="background-position-x: 50%;">廿十</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-582 sk-text" style="background-position-x: 50%;">22</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-726 sk-text" style="background-position-x: 50%;">初一</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-489 sk-text" style="background-position-x: 50%;">23</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-722 sk-text" style="background-position-x: 50%;">初二</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-685 sk-text" style="background-position-x: 50%;">24</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-943 sk-text" style="background-position-x: 50%;">初三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-343 sk-text" style="background-position-x: 50%;">25</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-382 sk-text" style="background-position-x: 50%;">初四</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-873 sk-text" style="background-position-x: 50%;">26</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-458 sk-text" style="background-position-x: 50%;">初五</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-943 sk-text" style="background-position-x: 50%;">27</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-898 sk-text" style="background-position-x: 50%;">初六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-342 sk-text" style="background-position-x: 50%;">28</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-685 sk-text" style="background-position-x: 50%;">初七</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-7 sk-text" style="background-position-x: 50%;">29</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-610 sk-text" style="background-position-x: 50%;">初八</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-677 sk-text" style="background-position-x: 50%;">30</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-546 sk-text" style="background-position-x: 50%;">初九</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-547 sk-text" style="background-position-x: 50%;">31</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-57 sk-text" style="background-position-x: 50%;">初十</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="date-now" data-index="1">
+        <text class="sk-transparent sk-text-18-7500-831 sk-text">2023年2月</text>
+      </view>
+      <view class="date-weekdays">
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-474 sk-text" style="background-position-x: 50%;">一</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-661 sk-text" style="background-position-x: 50%;">二</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-599 sk-text" style="background-position-x: 50%;">三</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-33 sk-text" style="background-position-x: 50%;">四</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-239 sk-text" style="background-position-x: 50%;">五</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-414 sk-text" style="background-position-x: 50%;">六</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-2 sk-text" style="background-position-x: 50%;">日</view>
+      </view>
+      <view class="date-arrays">
+        <scroll-view scroll-y="true">
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">1</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-777 sk-text" style="background-position-x: 50%;">十一</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">2</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-549 sk-text" style="background-position-x: 50%;">十二</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">3</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-949 sk-text" style="background-position-x: 50%;">十三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">4</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-191 sk-text" style="background-position-x: 50%;">十四</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">5</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-689 sk-text" style="background-position-x: 50%;">十五</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">6</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-158 sk-text" style="background-position-x: 50%;">十六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">7</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-141 sk-text" style="background-position-x: 50%;">十七</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">8</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-189 sk-text" style="background-position-x: 50%;">十八</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">9</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-139 sk-text" style="background-position-x: 50%;">十九</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-183 sk-text" style="background-position-x: 50%;">10</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-390 sk-text" style="background-position-x: 50%;">廿十</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-512 sk-text" style="background-position-x: 50%;">11</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-161 sk-text" style="background-position-x: 50%;">廿一</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-814 sk-text" style="background-position-x: 50%;">12</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-323 sk-text" style="background-position-x: 50%;">廿二</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-665 sk-text" style="background-position-x: 50%;">13</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-736 sk-text" style="background-position-x: 50%;">廿三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-292 sk-text" style="background-position-x: 50%;">14</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-133 sk-text" style="background-position-x: 50%;">廿四</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-736 sk-text" style="background-position-x: 50%;">15</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-106 sk-text" style="background-position-x: 50%;">廿五</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-325 sk-text" style="background-position-x: 50%;">16</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-148 sk-text" style="background-position-x: 50%;">廿六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-50 sk-text" style="background-position-x: 50%;">17</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-746 sk-text" style="background-position-x: 50%;">廿七</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-524 sk-text" style="background-position-x: 50%;">18</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-47 sk-text" style="background-position-x: 50%;">廿八</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-136 sk-text" style="background-position-x: 50%;">19</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-726 sk-text" style="background-position-x: 50%;">廿九</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-712 sk-text" style="background-position-x: 50%;">20</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-729 sk-text" style="background-position-x: 50%;">初一</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-930 sk-text" style="background-position-x: 50%;">21</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-705 sk-text" style="background-position-x: 50%;">初二</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-820 sk-text" style="background-position-x: 50%;">22</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-494 sk-text" style="background-position-x: 50%;">初三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-235 sk-text" style="background-position-x: 50%;">23</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-359 sk-text" style="background-position-x: 50%;">初四</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-413 sk-text" style="background-position-x: 50%;">24</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-289 sk-text" style="background-position-x: 50%;">初五</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-961 sk-text" style="background-position-x: 50%;">25</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-102 sk-text" style="background-position-x: 50%;">初六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-684 sk-text" style="background-position-x: 50%;">26</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-963 sk-text" style="background-position-x: 50%;">初七</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-782 sk-text" style="background-position-x: 50%;">27</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-915 sk-text" style="background-position-x: 50%;">初八</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-118 sk-text" style="background-position-x: 50%;">28</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-248 sk-text" style="background-position-x: 50%;">初九</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="date-now" data-index="2">
+        <text class="sk-transparent sk-text-18-7500-896 sk-text">2023年3月</text>
+      </view>
+      <view class="date-weekdays">
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-92 sk-text" style="background-position-x: 50%;">一</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-362 sk-text" style="background-position-x: 50%;">二</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-477 sk-text" style="background-position-x: 50%;">三</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-264 sk-text" style="background-position-x: 50%;">四</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-69 sk-text" style="background-position-x: 50%;">五</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-347 sk-text" style="background-position-x: 50%;">六</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-471 sk-text" style="background-position-x: 50%;">日</view>
+      </view>
+      <view class="date-arrays">
+        <scroll-view scroll-y="true">
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">1</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-365 sk-text" style="background-position-x: 50%;">初十</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">2</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-265 sk-text" style="background-position-x: 50%;">十一</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">3</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-702 sk-text" style="background-position-x: 50%;">十二</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">4</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-51 sk-text" style="background-position-x: 50%;">十三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">5</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-434 sk-text" style="background-position-x: 50%;">十四</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">6</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-824 sk-text" style="background-position-x: 50%;">十五</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">7</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-848 sk-text" style="background-position-x: 50%;">十六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">8</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-816 sk-text" style="background-position-x: 50%;">十七</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">9</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-358 sk-text" style="background-position-x: 50%;">十八</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-829 sk-text" style="background-position-x: 50%;">10</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-536 sk-text" style="background-position-x: 50%;">十九</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-599 sk-text" style="background-position-x: 50%;">11</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-63 sk-text" style="background-position-x: 50%;">廿十</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-594 sk-text" style="background-position-x: 50%;">12</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-304 sk-text" style="background-position-x: 50%;">廿一</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-295 sk-text" style="background-position-x: 50%;">13</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-455 sk-text" style="background-position-x: 50%;">廿二</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-802 sk-text" style="background-position-x: 50%;">14</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-284 sk-text" style="background-position-x: 50%;">廿三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-224 sk-text" style="background-position-x: 50%;">15</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-910 sk-text" style="background-position-x: 50%;">廿四</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-89 sk-text" style="background-position-x: 50%;">16</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-748 sk-text" style="background-position-x: 50%;">廿五</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-127 sk-text" style="background-position-x: 50%;">17</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-329 sk-text" style="background-position-x: 50%;">廿六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-781 sk-text" style="background-position-x: 50%;">18</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-241 sk-text" style="background-position-x: 50%;">廿七</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-20 sk-text" style="background-position-x: 50%;">19</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-656 sk-text" style="background-position-x: 50%;">廿八</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-127 sk-text" style="background-position-x: 50%;">20</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-666 sk-text" style="background-position-x: 50%;">廿九</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-636 sk-text" style="background-position-x: 50%;">21</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-238 sk-text" style="background-position-x: 50%;">廿十</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-920 sk-text" style="background-position-x: 50%;">22</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-893 sk-text" style="background-position-x: 50%;">初一</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-24 sk-text" style="background-position-x: 50%;">23</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-617 sk-text" style="background-position-x: 50%;">初二</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-626 sk-text" style="background-position-x: 50%;">24</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-892 sk-text" style="background-position-x: 50%;">初三</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-756 sk-text" style="background-position-x: 50%;">25</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-259 sk-text" style="background-position-x: 50%;">初四</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-405 sk-text" style="background-position-x: 50%;">26</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-192 sk-text" style="background-position-x: 50%;">初五</text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-314 sk-text" style="background-position-x: 50%;">27</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-420 sk-text" style="background-position-x: 50%;">初六</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-526 sk-text" style="background-position-x: 50%;">28</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-520 sk-text" style="background-position-x: 50%;">初七</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-748 sk-text" style="background-position-x: 50%;">29</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-109 sk-text" style="background-position-x: 50%;">初八</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-331 sk-text" style="background-position-x: 50%;">30</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-983 sk-text" style="background-position-x: 50%;">初九</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-text-18-7500-596 sk-text" style="background-position-x: 50%;">31</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-489 sk-text" style="background-position-x: 50%;">初十</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+          </view>
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="date-now" data-index="3">
+        <text class="sk-transparent sk-text-18-7500-364 sk-text">2023年4月</text>
+      </view>
+      <view class="date-weekdays">
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-612 sk-text" style="background-position-x: 50%;">一</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-658 sk-text" style="background-position-x: 50%;">二</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-148 sk-text" style="background-position-x: 50%;">三</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-305 sk-text" style="background-position-x: 50%;">四</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-245 sk-text" style="background-position-x: 50%;">五</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-970 sk-text" style="background-position-x: 50%;">六</view>
+        <view class="date-weekdays-item sk-transparent sk-text-18-7500-480 sk-text" style="background-position-x: 50%;">日</view>
+      </view>
+      <view class="date-arrays">
+        <scroll-view scroll-y="true">
+          <view class="date-array">
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian"></text>
+                <text class="date-item-lunar"></text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">1</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-262 sk-text" style="background-position-x: 50%;">十一</text>
+              </view>
+            </view>
+            <view class="date-item">
+              <view class="date-item-info">
+                <text class="date-item-gregorian sk-transparent sk-opacity">2</text>
+                <text class="date-item-lunar sk-transparent sk-text-18-7500-866 sk-text" style="background-position-x: 50%;">十二</text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</template>
