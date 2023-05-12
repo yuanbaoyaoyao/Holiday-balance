@@ -1,7 +1,7 @@
 <!--pages/date/date.wxml-->
 <view class="date">
     <block wx:for="{{datesOfYear}}" wx:key="index" wx:for-item="dates">
-        <view class="date-now">
+        <view class="date-now" bindtap="setDatesOfYear" data-index="{{index}}">
             <text>{{yearMonths[index]}}</text>
         </view>
         <view class="date-weekdays">
@@ -9,14 +9,16 @@
         </view>
         <view class="date-arrays">
             <scroll-view scroll-y="true">
-                <view class="date-array" wx:for="{{dates}}" wx:key="index" wx:for-index="datesIndex">
-                    <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
-                        <view class="{{today==date.gregorian&&monthNow==index+1?'date-highlight':''}} date-item-info">
-                            <text class="date-item-gregorian">{{date.gregorian}}</text>
-                            <text class="date-item-lunar">{{date.lunar}}</text>
+                <block wx:for="{{dates}}" wx:key="index" wx:for-index="datesIndex">
+                    <view class="date-array">
+                        <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
+                            <view class="{{today==date.gregorian&&monthNow==index+1?'date-highlight':''}} date-item-info">
+                                <text class="date-item-gregorian">{{date.gregorian}}</text>
+                                <text class="date-item-lunar">{{date.lunar}}</text>
+                            </view>
                         </view>
                     </view>
-                </view>
+                </block>
             </scroll-view>
         </view>
         <!-- <view class="date-analysis">

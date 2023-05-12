@@ -17,13 +17,22 @@ Page({
     let fullDate = String(year) + '年' + String(month) + '月';
     this.data.yearMonths.push(fullDate)
   },
-  setDatesOfYear() {
+  setDatesOfYear(e) {
+    this.data.yearMonths = []
     this.data.datesOfYear = []
     const year = new Date().getFullYear()
     let datesOfYear = []
-    for (let i = 1; i <= 12; i++) {
-      let dates = this.SetDates(year, i)
+    if (e != undefined && this.data.isAllShow == false) {
+      this.data.isAllShow = true
+      let index = e.currentTarget.dataset.index + 1
+      let dates = this.SetDates(year, index)
       datesOfYear.push(dates)
+    } else {
+      this.data.isAllShow = false
+      for (let i = 1; i <= 12; i++) {
+        let dates = this.SetDates(year, i)
+        datesOfYear.push(dates)
+      }
     }
     this.setData({
       datesOfYear: datesOfYear,
@@ -38,7 +47,6 @@ Page({
     let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
     let countDays = 0
     let datesArr = []
-    console.log("cycleNumbers:", cycleNumbers)
     for (let i = 0; i <= cycleNumbers; i++) {
       let tempArr = []
       for (let j = 0; j < 7; j++) {
@@ -87,17 +95,12 @@ Page({
   },
 
   GetMonthFirstWeekDay(year, month) {
-    const today = new Date();
     const firstDayOfMonth = new Date(year, month - 1, 1);
-    console.log("firstDayOfMonth:", firstDayOfMonth)
     const dayOfWeek = firstDayOfMonth.getDay();
-    console.log("dayOfWeek:", dayOfWeek)
     return dayOfWeek;
   },
   GetMonthLastDay(year, month) {
-    const today = new Date();
     const lastDayOfMonth = new Date(year, month, 0).getDate();
-    console.log("lastDayOfMonth:", lastDayOfMonth)
     return lastDayOfMonth
   },
 
