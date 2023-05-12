@@ -8,7 +8,6 @@ Page({
   data: {
     weekdays: ["一", "二", "三", "四", "五", "六", "日",],
     monthNow: [],
-    // dates: [],
     datesOfYear: [],
     today: '',
     isAllShow: false
@@ -34,7 +33,6 @@ Page({
   },
   SetDates(year, month) {
     this.GetNowDate(year, month)
-    let lunar
     let firstWeekDay = this.GetMonthFirstWeekDay(year, month)
     let lastDayOfMonth = this.GetMonthLastDay(year, month)
     let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
@@ -55,17 +53,13 @@ Page({
               tempArr.push("")
             } else {
               countDays++
-              lunar = getLunar(year, month, countDays);
-              tempArrItem.gregorian = countDays
-              tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+              tempArrItem = this.handleSetDatesItem(tempArrItem, year, month, countDays)
               tempArr.push(tempArrItem)
             }
           } else {
             if (firstWeekDay <= j + 1) {
               countDays++
-              lunar = getLunar(year, month, countDays);
-              tempArrItem.gregorian = countDays
-              tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+              tempArrItem = this.handleSetDatesItem(tempArrItem, year, month, countDays)
               tempArr.push(tempArrItem)
             } else {
               tempArr.push("")
@@ -74,9 +68,7 @@ Page({
         }
         else if (countDays < lastDayOfMonth) {
           countDays++
-          lunar = getLunar(year, month, countDays);
-          tempArrItem.gregorian = countDays
-          tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+          tempArrItem = this.handleSetDatesItem(tempArrItem, year, month, countDays)
           tempArr.push(tempArrItem)
         } else if (countDays >= lastDayOfMonth) {
           countDays++
@@ -86,6 +78,12 @@ Page({
       datesArr.push(tempArr)
     }
     return datesArr
+  },
+  handleSetDatesItem(tempArrItem, year, month, countDays) {
+    let lunar = getLunar(year, month, countDays);
+    tempArrItem.gregorian = countDays
+    tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+    return tempArrItem
   },
 
   GetMonthFirstWeekDay(year, month) {
