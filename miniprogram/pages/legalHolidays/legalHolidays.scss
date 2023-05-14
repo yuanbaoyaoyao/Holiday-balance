@@ -1,69 +1,185 @@
 /* pages/legalHolidays/legalHolidays.wxss */
 .holidays-item {
-  width: 80vw;
-  margin: 45rpx;
-  height: 300rpx;
-  padding: 30rpx;
-  border-radius: 30rpx;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-repeat: no-repeat;
+    width: 80vw;
+    margin: 45rpx;
+    height: 300rpx;
+    padding: 30rpx;
+    border-radius: 30rpx;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-repeat: no-repeat;
 }
 
 .holidays-half-screen-dialog {
-  z-index: 100000;
+    z-index: 100000;
 }
 
 .holidays-preview-box {
-  height: 100px;
-  width: 100px;
+    height: 100px;
+    width: 100px;
 }
 
 .rain-container {
-  position: relative;
-  overflow: hidden !important;
+    position: relative;
+    overflow: hidden !important;
 }
 
 .rain {
-  z-index: 999;
-  width: var(--size);
-  height: var(--hsize);
-  --size: 2px;
-  position: absolute;
-  border-radius: 200% 200% 0 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.8)
-  );
+    z-index: 999;
+    width: var(--size);
+    height: var(--hsize);
+    --size: 2px;
+    position: absolute;
+    border-radius: 200% 200% 0 0;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0.8));
 }
 
 @for $i from 1 through 20 {
-  .rain:nth-child(#{$i}) {
-    --size: #{random(10) * 0.2}px;
-    --hsize: #{random(3) * 12}px;
-    --left-ini: #{random(20) - 10}vw;
-    --left-end: #{random(20) - 10}vw;
-    left: #{random(100)}vw;
-    animation: rain #{0.5 + random(2)}s linear -#{random(10)}s infinite;
-  }
+    .rain:nth-child(#{$i}) {
+        --size: #{random(10) * 0.2}px;
+        --hsize: #{random(3) * 12}px;
+        --left-ini: #{random(20) - 10}vw;
+        --left-end: #{random(20) - 10}vw;
+        left: #{random(100)}vw;
+        animation: rain #{0.5 + random(2)}s linear -#{random(10)}s infinite;
+    }
 }
 
-
 @keyframes rain {
-  0% {
-    transform: translate3d(var(--left-ini), -20vh, 0);
-  }
+    0% {
+        transform: translate3d(var(--left-ini), -20vh, 0);
+    }
 
-  75% {
-    transform: translate3d(var(--left-ini), 100vh, 0);
-  }
+    75% {
+        transform: translate3d(var(--left-ini), 100vh, 0);
+    }
 
-  100% {
-    transform: translate3d(var(--left-end), 100vh, 0);
-  }
+    100% {
+        transform: translate3d(var(--left-end), 100vh, 0);
+    }
 }
 
 .rain:nth-child(12n) {
-  // 三行交替,滤镜模糊效果
-  filter: blur(1px);
+    // 三行交替,滤镜模糊效果
+    filter: blur(1px);
 }
+
+.fireworks-container {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fireworks-animation {
+    0% {
+        transform: translate(-50%, 15vh);
+        width: 1px;
+        opacity: 1;
+    }
+
+    50% {
+        width: 1px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100px;
+        opacity: 0;
+    }
+}
+
+.c-firework,
+.c-firework::before,
+.c-firework::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1;
+    z-index: 0;
+    background: radial-gradient(circle, yellow 10px, #000 0) 50% 00%,
+        radial-gradient(circle, khaki 10px, #000 0) 00% 50%,
+        radial-gradient(circle, white 10px, #000 0) 50% 99%,
+        radial-gradient(circle, lime 10px, #000 0) 99% 50%,
+        radial-gradient(circle, crimson 10px, #000 0) 80% 90%,
+        radial-gradient(circle, red 10px, #000 0) 95% 90%,
+        radial-gradient(circle, yellow 10px, #000 0) 10% 60%,
+        radial-gradient(circle, khaki 10px, #000 0) 31% 80%,
+        radial-gradient(circle, white 10px, #000 0) 80% 10%,
+        radial-gradient(circle, lime 10px, #000 0) 90% 23%,
+        radial-gradient(circle, crimson 10px, #000 0) 45% 20%,
+        radial-gradient(circle, red 10px, #000 0) 13% 24%;
+    background-size: 4px 4px;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    animation: fireworks-animation 3s infinite;
+}
+
+.c-firework::before {
+    transform: translate(-50%, -50%) rotate(25deg) !important;
+}
+
+.c-firework::after {
+    transform: translate(-50%, -50%) rotate(-37deg) !important;
+}
+
+.c-firework:nth-of-type(2),
+.c-firework:nth-of-type(2)::before,
+.c-firework:nth-of-type(2)::after {
+    top: 30%;
+    left: 16%;
+    animation-duration: 3.8s;
+}
+
+.c-firework:nth-of-type(3),
+.c-firework:nth-of-type(3)::before,
+.c-firework:nth-of-type(3)::after {
+    top: 10%;
+    left: 72%;
+    animation-duration: 4.2s;
+}
+
+.c-firework:nth-of-type(4),
+.c-firework:nth-of-type(4)::before,
+.c-firework:nth-of-type(4)::after {
+    top: 28%;
+    left: 32%;
+    animation-duration: 3.6s;
+}
+
+html {
+    background-image: linear-gradient(#69f, #fff);
+    height: 100%;
+    overflow: hidden;
+}
+.grass > view {
+    animation: breeze 8s cubic-bezier(.8, -0.5, .25, 1.5) infinite;
+    background-color: #0b0;
+    border-right: solid 5px #0c0;
+    border-top-right-radius: 100%;
+    bottom: 0;
+    position: absolute;
+    transform-origin: bottom;
+    transition: all 100ms ease-in-out;
+    width: 3px;
+}
+@keyframes breeze {
+    0%, 100% {
+        transform: auto;
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+.sun {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10vh 10vh #fff;
+    height: 10vh;
+    position: fixed;
+    right: 2vh;
+    top: 2vh;
+    width: 10vh;
+}
+
+

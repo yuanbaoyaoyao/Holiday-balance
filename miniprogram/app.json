@@ -1,46 +1,46 @@
 {
-  "pages": [
-    "pages/date/date",
-    "pages/legalHolidays/legalHolidays",
-    "pages/vacationRemain/vacationRemain",
-    "pages/about/about",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json",
-  "useExtendedLib": {
-    "weui": true
-  },
-  "tabBar": {
-    "custom": true,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
-    "borderStyle": "white",
-    "list": [{
-        "pagePath": "pages/legalHolidays/legalHolidays",
-        "text": "我的假日"
-      },
-      {
-        "pagePath": "pages/date/date",
-        "text": "日期"
-      },
-      {
-        "pagePath": "pages/vacationRemain/vacationRemain",
-        "text": "日期余额"
-      },
+    "pages": [
+        "pages/legalHolidays/legalHolidays",
+        "pages/date/date",
+        "pages/vacationRemain/vacationRemain",
+        "pages/about/about",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "useExtendedLib": {
+        "weui": true
+    },
+    "tabBar": {
+        "custom": true,
+        "color": "#000000",
+        "selectedColor": "#000000",
+        "backgroundColor": "#000000",
+        "borderStyle": "white",
+        "list": [{
+                "pagePath": "pages/legalHolidays/legalHolidays",
+                "text": "我的假日"
+            },
+            {
+                "pagePath": "pages/date/date",
+                "text": "日期"
+            },
+            {
+                "pagePath": "pages/vacationRemain/vacationRemain",
+                "text": "日期余额"
+            },
 
-      {
-        "pagePath": "pages/about/about",
-        "text": "关于我"
-      }
-    ]
-  },
-  "usingComponents": {}
+            {
+                "pagePath": "pages/about/about",
+                "text": "关于我"
+            }
+        ]
+    },
+    "usingComponents": {}
 }
