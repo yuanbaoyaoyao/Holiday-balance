@@ -18,8 +18,7 @@ Page({
                 image: "background-image: url('/assets/zongzi.svg');background-size: 80px 80px;background-position: right;"
             },
             {
-                name: "中秋节", date: "6月22日至6月24日", count: "8天", color: "#FFFD0A",
-                image: "background-image: url('/assets/midAutumn.svg');background-size: 80px 80px;background-position: right;"
+                name: "中秋节", date: "6月22日至6月24日", count: "8天", color: "black",
             },
             {
                 name: "国庆节", date: "6月22日至6月24日", count: "8天", color: "#FB7A5A",
@@ -41,7 +40,7 @@ Page({
                 value: 1
             }
         ],
-        savedFilePath: ''
+        savedFilePath: '',
     },
     chooseImage: function () {
         wx.chooseMedia({

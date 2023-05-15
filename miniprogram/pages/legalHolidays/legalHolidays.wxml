@@ -22,6 +22,31 @@
                     <view class="g-wrap-item" />
                 </block>
             </view>
+            <!-- 融合粽子 -->
+            <view wx:if="{{item.name=='端午节'}}">
+                <view class="loading">
+                    <view class="loading-assets">
+                        <view class="loading-item">123213</view>
+                        <view class="loading-item">22222</view>
+                        <view class="loading-item">33333</view>
+                    </view>
+                    <view class="loading-result">1111111111111111</view>
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="mix">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </view>
+            </view>
+            <!-- 大月亮 -->
+            <view wx:if="{{item.name=='中秋节'}}" class="moon">
+            </view>
+            <block wx:for="{{10}}" wx:key="index" wx:for-item="numberItem">
+                <view wx:if="{{item.name=='中秋节'}}" class="star"></view>
+            </block>
         </view>
     </block>
 </view>
