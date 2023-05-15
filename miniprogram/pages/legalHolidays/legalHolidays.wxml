@@ -1,7 +1,8 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
+
 <view class="holidays" style="z-index: 100;">
     <block wx:for="{{holidays}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-        <view class="holidays-item {{item.name=='春节'?'spring-container':''}}" style=" background-color: {{item.color}};" bindtap="handleTapView">
+        <view class="holidays-item {{item.name=='春节'?'spring-container':''}}" style="background-color: {{item.color}};{{item.image}}" bindlongtap="handleTapView">
             <view>{{item.name}}</view>
             <view>{{item.date}}</view>
             <view>{{item.count}}</view>
@@ -13,8 +14,14 @@
                 <view wx:if="{{item.name=='春节'}}" class="grass"></view>
             </block>
             <block wx:for="{{20}}" wx:key="index" wx:for-item="numberItem">
+                <!-- 天青色等烟雨 -->
                 <view wx:if="{{item.name=='清明节'}}" class="rain"></view>
             </block>
+            <view wx:if="{{item.name=='劳动节'}}" class="g-wrap">
+                <block wx:for="{{20}}" wx:key="index" wx:for-item="numberItem">
+                    <view class="g-wrap-item" />
+                </block>
+            </view>
         </view>
     </block>
 </view>

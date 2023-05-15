@@ -6,14 +6,25 @@ Page({
      */
     data: {
         holidays: [
-            { name: "元旦节", date: "12月31日至1月2日", count: "3天", color: "#FFF6DD", image: "" },
-            // { name: "春节", date: "1月21日至1月27日", count: "3天", color: "#9ED55E", image: "" },
-            { name: "春节", date: "1月21日至1月27日", count: "3天", color: "", image: "" },
+            { name: "元旦节", date: "12月31日至1月2日", count: "3天", color: "#FFF6DD", },
+            { name: "春节", date: "1月21日至1月27日", count: "3天", color: "", },
             { name: "清明节", date: "4月5日", count: "3天", color: "#99DAC2" },
-            { name: "劳动节", date: "4月29日至5月3日", count: "5天", color: "#76A7FA", image: "/assets/laborDay.svg" },
-            { name: "端午节", date: "6月22日至6月24日", count: "3天", color: "#B1C5AC", image: "/assets/zongzi.svg" },
-            { name: "中秋节", date: "6月22日至6月24日", count: "8天", color: "#FFFD0A", image: "/assets/midAutumn.svg" },
-            { name: "国庆节", date: "6月22日至6月24日", count: "8天", color: "#FB7A5A", image: "/assets/celebrate.svg" },
+            {
+                name: "劳动节", date: "4月29日至5月3日", count: "5天", color: "#76A7FA",
+                image: "background-image: url('/assets/laborDay.svg');background-size: 80px;80px;background-position: right;"
+            },
+            {
+                name: "端午节", date: "6月22日至6月24日", count: "3天", color: "#B1C5AC",
+                image: "background-image: url('/assets/zongzi.svg');background-size: 80px 80px;background-position: right;"
+            },
+            {
+                name: "中秋节", date: "6月22日至6月24日", count: "8天", color: "#FFFD0A",
+                image: "background-image: url('/assets/midAutumn.svg');background-size: 80px 80px;background-position: right;"
+            },
+            {
+                name: "国庆节", date: "6月22日至6月24日", count: "8天", color: "#FB7A5A",
+                image: "background-image: url('/assets/celebrate.svg');background-size: cover;"
+            },
         ],
         show: false,
         buttons: [
@@ -31,24 +42,6 @@ Page({
             }
         ],
         savedFilePath: ''
-    },
-    handleGetRainContainerInfo() {
-        // var query = wx.createSelectorQuery();
-        // query.select('#rain-container').boundingClientRect()
-        // query.exec(function (res) {
-        //     const rainContainerTop = res[0].top
-        //     const rainContainerBottom = res[0].bottom
-        //     const color = 'black'
-        //     module.exports = {
-        //         rainContainerTop: rainContainerTop,
-        //         rainContainerBottom: rainContainerBottom,
-        //         color: color
-        //     }
-        //     // css.update('$rain-container-top', rainContainerTop)
-        //     // css.update('$rain-container-bottom', rainContainerBottom)
-        //     console.log(res[0].top)
-        //     console.log(res[0].bottom)
-        // })
     },
     chooseImage: function () {
         wx.chooseMedia({
@@ -85,7 +78,6 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-        this.handleGetRainContainerInfo()
     },
 
     /**
