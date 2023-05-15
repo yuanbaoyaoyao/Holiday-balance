@@ -1,67 +1,66 @@
 {
-    "description": "项目配置文件",
-    "packOptions": {
-        "ignore": [],
-        "include": []
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "miniprogramRoot": "miniprogram/",
+  "compileType": "miniprogram",
+  "projectname": "Holiday-balance",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": true,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
     },
-    "miniprogramRoot": "miniprogram/",
-    "compileType": "miniprogram",
-    "projectname": "Holiday-balance",
-    "setting": {
-        "miniprogramNpmDistDir": true,
-        "packNpmRelationList": [
-            {
-                "packageJsonPath": "./package.json",
-                "miniprogramNpmDistDir": "./miniprogram/"
-            }
-        ],
-        "urlCheck": true,
-        "es6": true,
-        "enhance": true,
-        "postcss": true,
-        "preloadBackgroundData": false,
-        "minified": true,
-        "newFeature": false,
-        "coverView": true,
-        "nodeModules": false,
-        "autoAudits": false,
-        "showShadowRootInWxmlPanel": true,
-        "scopeDataCheck": false,
-        "uglifyFileName": false,
-        "checkInvalidKey": true,
-        "checkSiteMap": false,
-        "uploadWithSourceMap": true,
-        "compileHotReLoad": false,
-        "lazyloadPlaceholderEnable": false,
-        "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
-        "babelSetting": {
-            "ignore": [],
-            "disablePlugins": [],
-            "outputPath": ""
-        },
-        "useIsolateContext": false,
-        "userConfirmedBundleSwitch": false,
-        "packNpmManually": false,
-        "minifyWXSS": true,
-        "disableUseStrict": false,
-        "minifyWXML": true,
-        "showES6CompileOption": false,
-        "useCompilerPlugins": [
-            "typescript",
-            "sass"
-        ],
-        "ignoreUploadUnusedFiles": true
-    },
-    "simulatorType": "wechat",
-    "simulatorPluginLibVersion": {},
-    "srcMiniprogramRoot": "miniprogram/",
-    "appid": "wx627c724a69f59702",
-    "libVersion": "2.31.1",
-    "editorSetting": {
-        "tabIndent": "insertSpaces",
-        "tabSize": 4
-    },
-    "condition": {}
+    "useIsolateContext": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./miniprogram/"
+      }
+    ],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": [
+      "typescript",
+      "sass"
+    ],
+    "ignoreUploadUnusedFiles": true
+  },
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "srcMiniprogramRoot": "miniprogram/",
+  "appid": "wx627c724a69f59702",
+  "libVersion": "2.31.1",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 4
+  },
+  "condition": {}
 }

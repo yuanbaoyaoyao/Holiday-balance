@@ -6,8 +6,9 @@ Page({
      */
     data: {
         holidays: [
-            { name: "元旦节", date: "12月31日至1月2日", count: "3天", color: "#FFF6DD", image: "/assets/newYearDay2.svg" },
-            { name: "春节", date: "1月21日至1月27日", count: "3天", color: "#9ED55E", image: "/assets/springFestival.jpg" },
+            { name: "元旦节", date: "12月31日至1月2日", count: "3天", color: "#FFF6DD", image: "" },
+            // { name: "春节", date: "1月21日至1月27日", count: "3天", color: "#9ED55E", image: "" },
+            { name: "春节", date: "1月21日至1月27日", count: "3天", color: "", image: "" },
             { name: "清明节", date: "4月5日", count: "3天", color: "#99DAC2" },
             { name: "劳动节", date: "4月29日至5月3日", count: "5天", color: "#76A7FA", image: "/assets/laborDay.svg" },
             { name: "端午节", date: "6月22日至6月24日", count: "3天", color: "#B1C5AC", image: "/assets/zongzi.svg" },
@@ -78,25 +79,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-        var numberOfBlades = 400;
-        var grass = this.selectComponent('.grass')
-        console.log("grass:", grass)
-        function assignRandomStyles(blade) {
-            var randomHeight = Math.floor(Math.random() * 100);
-            var randomLeft = Math.floor(Math.random() * (300 - 8));
-            var randomRotation = Math.floor(Math.random() * 10) - 5;
-            blade.style.height = (randomHeight + 100) + 'px';
-            blade.style.zIndex = randomHeight;
-            blade.style.opacity = randomHeight * 0.02;
-            blade.style.left = randomLeft + 'px';
-            blade.style.transform = 'rotate(' + randomRotation + 'deg)';
-        }
-
-        for (var i = 0; i < numberOfBlades; i++) {
-            var blade = this.selectComponent('.div');
-            assignRandomStyles(blade);
-            grass.appendChild(blade);
-        }
     },
 
     /**
