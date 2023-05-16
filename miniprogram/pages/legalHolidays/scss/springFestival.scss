@@ -1,0 +1,46 @@
+.sun {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5vh 5vh #fff;
+    height: 2vh;
+    position: absolute;
+    right: 1vh;
+    top: 1vh;
+    width: 2vh;
+}
+
+.spring-container {
+    background-image: linear-gradient(#69f, rgb(219, 229, 250));
+}
+
+@for $i from 0 through 100 {
+    .grass:nth-child(#{$i}) {
+        height: #{20 + random(10)}px;
+        left: #{random(400)}px;
+        opacity: #{0.1+ random(1)};
+    }
+}
+
+.grass {
+    animation: breeze 8s cubic-bezier(.8, -0.5, .25, 1.5) infinite;
+    background-color: #0b0;
+    border-right: solid 2px #0c0;
+    border-top-right-radius: 100%;
+    bottom: 0;
+    position: absolute;
+    transform-origin: bottom;
+    transition: all 100ms ease-in-out;
+    width: 1px;
+}
+
+@keyframes breeze {
+
+    0%,
+    100% {
+        transform: auto;
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}

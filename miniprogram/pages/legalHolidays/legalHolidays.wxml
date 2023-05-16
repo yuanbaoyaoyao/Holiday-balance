@@ -6,11 +6,27 @@
             <view>{{item.name}}</view>
             <view>{{item.date}}</view>
             <view>{{item.count}}</view>
+            <view class="lantern-box" wx:if="{{item.name=='元旦节'}}">
+                <view class="lantern">
+                    <view class="line"></view>
+                    <view class="lantern-a">
+                        <view class="lantern-b">
+                            <view class="lantern-t">
+                                元 
+                            </view>
+                        </view>
+                    </view>
+                    <view class="spike spike-a">
+                        <view class="spike-c"></view>
+                        <view class="spike-b"></view>
+                    </view>
+                </view>
+            </view>
             <block wx:for="{{4}}" wx:key="index" wx:for-item="numberItem">
-                <view wx:if="{{item.name=='元旦节'}}" class="c-firework"></view>
+                <view wx:if="{{item.name=='国庆节'}}" class="c-firework"></view>
             </block>
             <view wx:if="{{item.name=='春节'}}" class="sun"></view>
-            <block wx:for="{{80}}" wx:key="index" wx:for-item="numberItem">
+            <block wx:for="{{100}}" wx:key="index" wx:for-item="numberItem">
                 <view wx:if="{{item.name=='春节'}}" class="grass"></view>
             </block>
             <block wx:for="{{20}}" wx:key="index" wx:for-item="numberItem">
@@ -61,5 +77,6 @@
         </view>
     </view>
 </mp-half-screen-dialog>
+
 <!-- 防止底部自定义导航栏挡住内容 -->
 <occupy-bottom></occupy-bottom>

@@ -22,7 +22,7 @@ Page({
             },
             {
                 name: "国庆节", date: "6月22日至6月24日", count: "8天", color: "#FB7A5A",
-                image: "background-image: url('/assets/celebrate.svg');background-size: cover;"
+
             },
         ],
         show: false,

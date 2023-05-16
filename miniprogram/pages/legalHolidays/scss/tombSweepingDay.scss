@@ -1,0 +1,41 @@
+.rain {
+    z-index: 999;
+    width: var(--size);
+    height: var(--hsize);
+    --size: 2px;
+    position: absolute;
+    border-radius: 200% 200% 0 0;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0.8));
+}
+
+@for $i from 1 through 20 {
+    .rain:nth-child(#{$i}) {
+        --size: #{random(10) * 0.2}px;
+        --hsize: #{random(3) * 12}px;
+        --left-ini: #{random(20) - 10}vw;
+        --left-end: #{random(20) - 10}vw;
+        left: #{random(100)}vw;
+        animation: rain #{0.5 + random(2)}s linear -#{random(10)}s infinite;
+    }
+}
+
+@keyframes rain {
+    0% {
+        transform: translate3d(var(--left-ini), -20vh, 0);
+    }
+
+    75% {
+        transform: translate3d(var(--left-ini), 100vh, 0);
+    }
+
+    100% {
+        transform: translate3d(var(--left-end), 100vh, 0);
+    }
+}
+
+.rain:nth-child(12n) {
+    // 三行交替,滤镜模糊效果
+    filter: blur(1px);
+}
