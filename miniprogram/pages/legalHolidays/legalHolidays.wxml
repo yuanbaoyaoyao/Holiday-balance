@@ -1,12 +1,17 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
-
+<!-- TODO:下一个假期彩带 -->
 <view class="holidays" style="z-index: 100;">
     <block wx:for="{{holidays}}" wx:for-index="index" wx:for-item="item" wx:key="index">
         <view class="holidays-item {{item.name=='春节'?'spring-container':''}}" style="background-color: {{item.color}};{{item.image}}" bindlongtap="handleTapView">
-            <view>{{item.name}}</view>
-            <view>{{item.date}}</view>
-            <view>{{item.count}}</view>
-            <view class="lantern-box" wx:if="{{item.name=='元旦节'}}">
+            <view class="holidays-item-container">
+                <view class="holidays-name">{{item.name}}</view>
+                <view class="holidays-count-container">
+                    <view class="holidays-date">{{item.date}}</view>
+                    <view class="holidays-count">{{item.count}}</view>
+                </view>
+                <view class="holidays-count-down-container">还有<text class="holidays-count-down">36</text>天</view>
+            </view>
+            <view class="lantern-box" wx:if="{{item.name=='元旦'}}">
                 <view class="lantern">
                     <view class="line"></view>
                     <view class="lantern-a">
@@ -22,7 +27,7 @@
                     </view>
                 </view>
             </view>
-            <block wx:for="{{4}}" wx:key="index" wx:for-item="numberItem">
+            <block wx:for="{{10}}" wx:key="index" wx:for-item="numberItem">
                 <view wx:if="{{item.name=='国庆节'}}" class="c-firework"></view>
             </block>
             <view wx:if="{{item.name=='春节'}}" class="sun"></view>

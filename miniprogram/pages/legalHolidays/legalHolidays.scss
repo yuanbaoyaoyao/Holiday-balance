@@ -1,5 +1,5 @@
 /* pages/legalHolidays/legalHolidays.wxss */
-
+//TODO 清明节添加云烟效果
 @import './scss/newYear.scss';
 @import './scss/springFestival.scss';
 @import './scss/laborDay.scss';
@@ -7,6 +7,7 @@
 @import './scss/dragonBoatFestival.scss';
 @import './scss/moonFestival.scss';
 @import './scss/nationalDay.scss';
+
 .holidays-item {
     width: 80vw;
     margin: 45rpx;
@@ -16,7 +17,43 @@
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     position: relative;
     overflow: hidden;
-    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.holidays-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250rpx;
+}
+
+.holidays-count-container {
+    display: grid;
+    width: inherit;
+    grid-template-columns: 70% 30%;
+    justify-items: center;
+}
+
+.holidays-count-down-container {
+    margin-top: 20rpx;
+}
+.holidays-count-down{
+    font-size: 40rpx;
+    font-weight: 600;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    font-family: 楷体, Arial, Lucida Grande, Tahoma, sans-serif;
+}
+
+.holidays-name {
+    width: inherit;
+    text-align: center;
+    font-size: 55rpx;
+    font-family: 楷体, Arial, Lucida Grande, Tahoma, sans-serif;
 }
 
 .holidays-half-screen-dialog {

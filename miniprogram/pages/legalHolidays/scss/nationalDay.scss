@@ -50,26 +50,13 @@
     transform: translate(-50%, -50%) rotate(-37deg) !important;
 }
 
-.c-firework:nth-of-type(2),
-.c-firework:nth-of-type(2)::before,
-.c-firework:nth-of-type(2)::after {
-    top: 30%;
-    left: 16%;
-    animation-duration: 3.8s;
-}
+@for $i from 1 to 10 {
 
-.c-firework:nth-of-type(3),
-.c-firework:nth-of-type(3)::before,
-.c-firework:nth-of-type(3)::after {
-    top: 10%;
-    left: 72%;
-    animation-duration: 4.2s;
-}
-
-.c-firework:nth-of-type(4),
-.c-firework:nth-of-type(4)::before,
-.c-firework:nth-of-type(4)::after {
-    top: 28%;
-    left: 32%;
-    animation-duration: 3.6s;
+    .c-firework:nth-of-type(#{$i}),
+    .c-firework:nth-of-type(#{$i})::before,
+    .c-firework:nth-of-type(#{$i})::after {
+        top:#{random() * 80%};
+        left: #{random()*100%};
+        animation-duration: #{random(4)+3 }s;
+    }
 }
