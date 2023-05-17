@@ -1,5 +1,7 @@
 /* pages/legalHolidays/legalHolidays.wxss */
 //TODO 清明节添加云烟效果
+//TODO 倒计时优化
+//TODO 彩带
 @import './scss/newYear.scss';
 @import './scss/springFestival.scss';
 @import './scss/laborDay.scss';
@@ -29,6 +31,10 @@
     justify-content: center;
     align-items: center;
     width: 250rpx;
+}
+.moon-festival-container{
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(83, 123, 204));
+    color: white;
 }
 
 .holidays-count-container {

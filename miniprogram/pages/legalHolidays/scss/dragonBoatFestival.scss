@@ -3,7 +3,7 @@ $delay: 2.8s;
 
 .loading {
     position: absolute;
-    right: 50px;
+    right: 190rpx;
     top: 50%;
     background-color: black;
     z-index: 1000;
@@ -32,8 +32,8 @@ $delay: 2.8s;
         background-size: contain;
         position: absolute;
         background-repeat: no-repeat;
-        height: 30px;
-        width: 30px;
+        height: 40px;
+        width: 40px;
         filter: drop-shadow(0px 0px 8px rgba(252, 233, 124, .8));
 
         &:nth-child(1) {
@@ -68,15 +68,13 @@ $delay: 2.8s;
 }
 
 .loading-result {
-    width: 50px;
-    height: 50px;
-    left: 50%;
-    top: 50%;
+    width: 160rpx;
+    height: 160rpx;
     background-size: contain;
     position: absolute;
     background-repeat: no-repeat;
-    margin-left: -25px;
-    margin-top: -25px;
+    margin-left: -80rpx;
+    margin-top: -70rpx;
     filter: drop-shadow(0px 0px 8px rgba(252, 233, 124, .5));
     opacity: 0;
 }

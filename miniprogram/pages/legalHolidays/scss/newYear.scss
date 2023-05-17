@@ -1,7 +1,9 @@
+$lanternTop:30px;
+
 .lantern-box {
     margin-top: 10px;
     position: absolute;
-    top: -40px;
+    top: -$lanternTop;
     right: -20px;
     z-index: 999;
 }
@@ -43,10 +45,10 @@
 
 .line {
     position: absolute;
-    top: -30px;
+    top: -40px;
     left: 60px;
     width: 2px;
-    height: 30px;
+    height: 40px;
     background: #dc8f03;
 }
 
