@@ -12,7 +12,7 @@
                     <view class="lantern-a">
                         <view class="lantern-b">
                             <view class="lantern-t">
-                                元 
+                                元
                             </view>
                         </view>
                     </view>
@@ -33,9 +33,15 @@
                 <!-- 天青色等烟雨 -->
                 <view wx:if="{{item.name=='清明节'}}" class="rain"></view>
             </block>
+            <view wx:if="{{item.name=='劳动节'}}" bindtap="handleAnimationLaborDay">
+                <!-- 劳动节good -->
+                <view class="labor-day-good" style="{{animationLaborDayGood}}" />
+                <!-- 劳动节hold -->
+                <view class="labor-day-hold" style="{{animationLaborDayHold}}" />
+            </view>
             <view wx:if="{{item.name=='劳动节'}}" class="g-wrap">
                 <block wx:for="{{20}}" wx:key="index" wx:for-item="numberItem">
-                    <view class="g-wrap-item" />
+                    <view class="g-wrap-item {{laborDayThumbsUpClass}}" />
                 </block>
             </view>
             <!-- 融合粽子 -->

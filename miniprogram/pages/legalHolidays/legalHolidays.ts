@@ -11,7 +11,6 @@ Page({
             { name: "清明节", date: "4月5日", count: "3天", color: "#99DAC2" },
             {
                 name: "劳动节", date: "4月29日至5月3日", count: "5天", color: "#76A7FA",
-                image: "background-image: url('/assets/laborDay.svg');background-size: 80px;80px;background-position: right;"
             },
             {
                 name: "端午节", date: "6月22日至6月24日", count: "3天", color: "#B1C5AC",
@@ -41,13 +40,32 @@ Page({
             }
         ],
         savedFilePath: '',
+        animationLaborDayGood: "animation:showLaborDay 0.5s forwards;",
+        animationLaborDayHold: "animation:hideLaborDay 0.5s forwards;",
+        laborDayThumbsUpClass: "",
+        laborTimer: 0,
     },
-    chooseImage: function () {
+    handleAnimationLaborDay() {
+        this.setData({
+            animationLaborDayGood: 'animation:hideLaborDay 0.5s forwards;',
+            animationLaborDayHold: "animation:showLaborDay 0.5s forwards;",
+            laborDayThumbsUpClass: "g-wrap-item-animation"
+        })
+        clearTimeout(this.data.laborTimer);
+        this.data.laborTimer = setTimeout(() => {
+            this.setData({
+                animationLaborDayGood: 'animation:showLaborDay 0.5s forwards;',
+                animationLaborDayHold: "animation:hideLaborDay 0.5s forwards;",
+                laborDayThumbsUpClass: ""
+            })
+        }, 1000);
+    },
+    chooseImage() {
         wx.chooseMedia({
             success: this.saveImage
         })
     },
-    saveImage: function (res) {
+    saveImage(res) {
         let that = this
         const tempFilePaths = res.tempFiles[0].tempFilePath
         wx.getFileSystemManager().saveFile({
