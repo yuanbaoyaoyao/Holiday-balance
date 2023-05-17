@@ -33,7 +33,7 @@
                 <!-- 天青色等烟雨 -->
                 <view wx:if="{{item.name=='清明节'}}" class="rain"></view>
             </block>
-            <view wx:if="{{item.name=='劳动节'}}" bindtap="handleAnimationLaborDay">
+            <view class="labor-day" wx:if="{{item.name=='劳动节'}}" bindtap="handleAnimationLaborDay">
                 <!-- 劳动节good -->
                 <view class="labor-day-good" style="{{animationLaborDayGood}}" />
                 <!-- 劳动节hold -->

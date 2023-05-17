@@ -1,5 +1,4 @@
 // pages/legalHolidays/legalHolidays.ts
-//TODO 把图片变成动态图片，劳动节那个手变成点赞
 Page({
     /**
      * 页面的初始数据
@@ -46,7 +45,6 @@ Page({
         isAnimationLaborDay: true,
         laborTimer: 0,
     },
-    //有动画，有bug
     handleAnimationLaborDay() {
         if (this.data.isAnimationLaborDay) {
             this.setData({
