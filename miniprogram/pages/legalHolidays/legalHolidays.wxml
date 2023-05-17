@@ -11,6 +11,9 @@
                 </view>
                 <view class="holidays-count-down-container">还有<text class="holidays-count-down">36</text>天</view>
             </view>
+            <view class="wrap">
+                <view class="ribbon">下一个假期</view>
+            </view>
             <view class="lantern-box" wx:if="{{item.name=='元旦'}}">
                 <view class="lantern">
                     <view class="line"></view>
