@@ -43,22 +43,34 @@ Page({
         animationLaborDayGood: "animation:showLaborDay 0.5s forwards;",
         animationLaborDayHold: "animation:hideLaborDay 0.5s forwards;",
         laborDayThumbsUpClass: "",
+        isAnimationLaborDay: true,
         laborTimer: 0,
     },
+    //有动画，有bug
     handleAnimationLaborDay() {
-        this.setData({
-            animationLaborDayGood: 'animation:hideLaborDay 0.5s forwards;',
-            animationLaborDayHold: "animation:showLaborDay 0.5s forwards;",
-            laborDayThumbsUpClass: "g-wrap-item-animation"
-        })
+        if (this.data.isAnimationLaborDay) {
+            this.setData({
+                animationLaborDayGood: 'animation:hideLaborDay 0.5s forwards;',
+                animationLaborDayHold: "animation:showLaborDay 0.5s forwards;",
+                laborDayThumbsUpClass: "g-wrap-item-animation"
+            })
+            this.data.isAnimationLaborDay = false
+        } else {
+            this.setData({
+                animationLaborDayGood: 'opacity:1',
+                animationLaborDayHold: "opacity:0",
+                laborDayThumbsUpClass: "g-wrap-item-animation"
+            })
+        }
         clearTimeout(this.data.laborTimer);
         this.data.laborTimer = setTimeout(() => {
             this.setData({
                 animationLaborDayGood: 'animation:showLaborDay 0.5s forwards;',
                 animationLaborDayHold: "animation:hideLaborDay 0.5s forwards;",
-                laborDayThumbsUpClass: ""
+                laborDayThumbsUpClass: "",
             })
-        }, 1000);
+            this.data.isAnimationLaborDay = true
+        }, 1200);
     },
     chooseImage() {
         wx.chooseMedia({
