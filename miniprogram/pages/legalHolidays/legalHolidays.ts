@@ -10,7 +10,7 @@ Page({
             { name: "清明节", date: "4/5-4/5", count: "1天", color: "#99DAC2" },
             { name: "劳动节", date: "4/29-5/3", count: "5天", color: "#76A7FA", },
             { name: "端午节", date: "6/22-6/24", count: "3天", color: "#B1C5AC", },
-            { name: "中秋节", date: "9/29-9-29", count: "1天", color: "black", },
+            { name: "中秋节", date: "9/29-9/29", count: "1天", color: "black", },
             { name: "国庆节", date: "9/30-10/6", count: "7天", color: "#FB7A5A", },
         ],
         show: false,

@@ -51,11 +51,10 @@
 }
 
 @for $i from 1 to 10 {
-
     .c-firework:nth-of-type(#{$i}),
     .c-firework:nth-of-type(#{$i})::before,
     .c-firework:nth-of-type(#{$i})::after {
-        top:#{random() * 80%};
+        top:#{random() * 60%};
         left: #{random()*100%};
         animation-duration: #{random(4)+3 }s;
     }
