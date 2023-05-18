@@ -17,8 +17,22 @@
                             <view class="{{today==date.gregorian&&monthNow==index+1?'date-highlight':''}} date-item-info">
                                 <view class="date-item-gregorian">
                                     {{date.gregorian}}
-                                    <text class="date-item-gregorian-highLight-work">班</text>
-                                    <!-- <text class="date-item-gregorian-highLight-reset">休</text> -->
+                                    <wxs module="m1">
+                                        var isWork = function (array, value) {
+                                            if (array.indexOf(value) != -1) {
+                                                return "班"
+                                            }
+                                        }
+                                        var isRest = function (array, value) {
+                                            if (array.indexOf(value) != -1) {
+                                                return "休"
+                                            }
+                                        }
+                                        module.exports.isRest = isRest
+                                        module.exports.isWork = isWork
+                                    </wxs>
+                                    <text class="date-item-gregorian-highLight-work">{{m1.isWork(compensatoryLeaveDays,date.monthDay)}}</text>
+                                    <text class="date-item-gregorian-highLight-reset">{{m1.isRest(holidayArr,date.monthDay)}}</text>
                                 </view>
                                 <text class="date-item-lunar">{{date.lunar}}</text>
                             </view>
