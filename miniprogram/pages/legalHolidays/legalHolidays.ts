@@ -100,8 +100,6 @@ Page({
                 break;
             }
         }
-        console.log("currentHolidayIndex:", this.data.currentHolidayIndex)
-        console.log("nextHolidayIndex:", this.data.nextHolidayIndex)
     },
     handleMixZongZi() {
         this.setData({
