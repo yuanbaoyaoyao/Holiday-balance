@@ -39,7 +39,13 @@ Page({
         zongziItemAnimationClass: "",
         zongziAssetsAnimationClass: "",
         nextHolidayIndex: 0,
-        currentHolidayIndex: null
+        currentHolidayIndex: null,
+        countDownDays: 0,
+        countDownDaysClass: "",
+        nextFestivalClass: "",
+    },
+    handleShowCountDown() {
+        console.log("点击了")
     },
     handleCountNextFestival() {
         this.setData({
@@ -53,7 +59,6 @@ Page({
             let tempArr = temData.split("-")
             let strDate = tempArr[0];
             let [strMonth, strDay] = strDate.split("/");
-            // let strFullDate = new Date(year, strMonth - 1, strDay);
             let strFullDate
             if (i == 0) { strFullDate = new Date(this.data.holidays[0].startYear, strMonth - 1, strDay) }
             else { strFullDate = new Date(year, strMonth - 1, strDay); }
@@ -62,7 +67,6 @@ Page({
                 //判断是否还在当前假期中
                 let endDate = tempArr[1];
                 let [endMonth, endDay] = endDate.split("/");
-                // let endFullDate = new Date(year, endMonth - 1, endDay);
                 let endFullDate
                 if (i == 0) { endFullDate = new Date(this.data.holidays[0].endYear, endMonth - 1, endDay) }
                 else { endFullDate = new Date(year, endMonth - 1, endDay); }
@@ -71,8 +75,15 @@ Page({
                     this.setData({ currentHolidayIndex: i })
                 }
             } else {
-                console.log("strFullDate:", strFullDate)
-                this.setData({ nextHolidayIndex: i })
+                //计算还有多少天到达
+                let countDown = (strFullDate.getTime() - currentDate.getTime()) / (1000 * 3600 * 24)
+                if (countDown.toString().includes(".")) {
+                    countDown = Number(countDown.toString().split(".")[0]) + 1
+                }
+                this.setData({
+                    countDownDays: countDown,
+                    nextHolidayIndex: i
+                })
                 break;
             }
         }
