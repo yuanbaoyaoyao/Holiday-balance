@@ -1,5 +1,4 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
-<!-- TODO:下一个假期彩带 -->
 <view class="holidays" style="z-index: 100;">
     <block wx:for="{{holidays}}" wx:for-index="index" wx:for-item="item" wx:key="index">
         <view class="holidays-item {{item.name=='春节'?'spring-container':''}} {{item.name=='中秋节'?'moon-festival-container':''}}" style="background-color: {{item.color}};{{item.image}}" bindlongtap="handleTapView">
