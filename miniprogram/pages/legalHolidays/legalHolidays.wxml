@@ -9,10 +9,12 @@
                     <view class="holidays-date">{{item.date}}</view>
                     <view class="holidays-count">{{item.count}}</view>
                 </view>
-                <view class="holidays-count-down-container">还有<text class="holidays-count-down">36</text>天</view>
+                <!-- <view class="holidays-count-down-container">还有<text class="holidays-count-down">36</text>天</view> -->
             </view>
             <view class="wrap">
-                <view class="ribbon">下一个假期</view>
+                <!-- 点击显示还有多少天到达 -->
+                <view class="ribbon" wx:if="{{index==nextHolidayIndex&&currentHolidayIndex==null}}">下一个假期</view>
+                <view class="ribbon" wx:if="{{index==currentHolidayIndex}}">当前假期</view>
             </view>
             <view class="lantern-box" wx:if="{{item.name=='元旦'}}">
                 <view class="lantern">

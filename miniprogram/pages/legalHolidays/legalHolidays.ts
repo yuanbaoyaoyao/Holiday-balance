@@ -5,12 +5,13 @@ Page({
      */
     data: {
         holidays: [
-            { name: "元旦", date: "12/31-1/2", count: "3天", color: "#FFF6DD", },
-            { name: "春节", date: "1/21-1/27", count: "3天", color: "", },
+            //元旦比较特殊，包含上一年
+            { name: "元旦", startYear: 2022, endYear: 2023, date: "12/31-1/2", count: "3天", color: "#FFF6DD", },
+            { name: "春节", date: "1/21-1/27", count: "3天", },
             { name: "清明节", date: "4/5-4/5", count: "1天", color: "#99DAC2" },
             { name: "劳动节", date: "4/29-5/3", count: "5天", color: "#76A7FA", },
             { name: "端午节", date: "6/22-6/24", count: "3天", color: "#B1C5AC", },
-            { name: "中秋节", date: "9/29-9/29", count: "1天", color: "black", },
+            { name: "中秋节", date: "9/29-9/29", count: "1天", },
             { name: "国庆节", date: "9/30-10/6", count: "7天", color: "#FB7A5A", },
         ],
         show: false,
@@ -36,7 +37,47 @@ Page({
         laborTimer: 0,
         zongziResultAnimationClass: "",
         zongziItemAnimationClass: "",
-        zongziAssetsAnimationClass: ""
+        zongziAssetsAnimationClass: "",
+        nextHolidayIndex: 0,
+        currentHolidayIndex: null
+    },
+    handleCountNextFestival() {
+        this.setData({
+            nextHolidayIndex: 0,
+            currentHolidayIndex: null
+        })
+        const currentDate = new Date();
+        for (let i = 0; i < this.data.holidays.length; i++) {
+            let year = new Date().getFullYear();
+            let temData = this.data.holidays[i].date
+            let tempArr = temData.split("-")
+            let strDate = tempArr[0];
+            let [strMonth, strDay] = strDate.split("/");
+            // let strFullDate = new Date(year, strMonth - 1, strDay);
+            let strFullDate
+            if (i == 0) { strFullDate = new Date(this.data.holidays[0].startYear, strMonth - 1, strDay) }
+            else { strFullDate = new Date(year, strMonth - 1, strDay); }
+            //如果当前时间大于这个时间
+            if (strFullDate.getTime() < currentDate.getTime()) {
+                //判断是否还在当前假期中
+                let endDate = tempArr[1];
+                let [endMonth, endDay] = endDate.split("/");
+                // let endFullDate = new Date(year, endMonth - 1, endDay);
+                let endFullDate
+                if (i == 0) { endFullDate = new Date(this.data.holidays[0].endYear, endMonth - 1, endDay) }
+                else { endFullDate = new Date(year, endMonth - 1, endDay); }
+                if (endFullDate.getTime() > currentDate.getTime()) {
+                    //当前假期
+                    this.setData({ currentHolidayIndex: i })
+                }
+            } else {
+                console.log("strFullDate:", strFullDate)
+                this.setData({ nextHolidayIndex: i })
+                break;
+            }
+        }
+        console.log("currentHolidayIndex:", this.data.currentHolidayIndex)
+        console.log("nextHolidayIndex:", this.data.nextHolidayIndex)
     },
     handleMixZongZi() {
         this.setData({
@@ -111,7 +152,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        this.handleCountNextFestival()
         if (typeof this.getTabBar === 'function' && this.getTabBar()) {
             this.getTabBar().setData({
                 selected: 0
