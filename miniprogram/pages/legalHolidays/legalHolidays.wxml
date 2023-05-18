@@ -14,8 +14,8 @@
             <view class="wrap">
                 <!-- 点击显示还有多少天到达 -->
                 <view class="ribbon" wx:if="{{index==nextHolidayIndex&&currentHolidayIndex==null}}" bindtap="handleShowCountDown">
-                    <text class="{{nextFestivalClass}}">下一个假期</text>
-                    <text class="{{countDownDaysClass}}" style="opacity: 0;">还有{{countDownDays}}天</text>
+                    <text style="{{nextFestivalStyle}}">下一个假期</text>
+                    <text style="{{countDownDaysStyle}}">还有{{countDownDays}}天</text>
                 </view>
                 <view class="ribbon" wx:if="{{index==currentHolidayIndex}}">当前假期</view>
             </view>

@@ -41,11 +41,24 @@ Page({
         nextHolidayIndex: 0,
         currentHolidayIndex: null,
         countDownDays: 0,
-        countDownDaysClass: "",
-        nextFestivalClass: "",
+        countDownDaysStyle: "opacity: 0;",
+        nextFestivalStyle: "",
+        isShowCountDownDays: false
     },
     handleShowCountDown() {
-        console.log("点击了")
+        if (!this.data.isShowCountDownDays) {
+            this.data.isShowCountDownDays = true
+            this.setData({
+                countDownDaysStyle: "animation:showRibbon 0.5s cubic-bezier(.8, -0.5, .25, 1.5) forwards",
+                nextFestivalStyle: "animation:hideRibbon 0.5s cubic-bezier(.8, -0.5, .25, 1.5) forwards",
+            })
+        } else {
+            this.data.isShowCountDownDays = false
+            this.setData({
+                countDownDaysStyle: "animation:hideRibbon 0.5s cubic-bezier(.8, -0.5, .25, 1.5) forwards",
+                nextFestivalStyle: "animation:showRibbon 0.5s cubic-bezier(.8, -0.5, .25, 1.5) forwards",
+            })
+        }
     },
     handleCountNextFestival() {
         this.setData({

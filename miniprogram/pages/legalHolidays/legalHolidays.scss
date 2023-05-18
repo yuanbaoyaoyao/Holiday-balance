@@ -121,4 +121,30 @@
     border: 1px dashed;
     box-shadow: 0 0 0 3px #57DD43, 0px 21px 5px -18px rgba(0, 0, 0, 0.6);
     background: #57DD43;
+
+    text {
+        position: absolute;
+        top: 3rpx;
+        right: 110rpx;
+    }
+}
+
+@keyframes showRibbon {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideRibbon {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
