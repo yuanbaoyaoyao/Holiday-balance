@@ -1,6 +1,7 @@
 import { getLunar } from "chinese-lunar-calendar";
 // pages/date/date.ts
 //TODO 自定义假期，可能需要globalData
+
 Page({
     /**
      * 页面的初始数据
@@ -9,6 +10,10 @@ Page({
         weekdays: ["一", "二", "三", "四", "五", "六", "日",],
         compensatoryLeaveDays: getApp().globalData.compensatoryLeaveDays,
         holidayArr: [],
+        monthRestDayArr: {
+            allRestDays: 0,
+            remainingRestDays: 0
+        },
         yearMonths: [],
         datesOfYear: [],
         today: '',
@@ -17,6 +22,7 @@ Page({
         loading: false,
         array: 1
     },
+
     handleCountHolidayArr() {
         let holidays = getApp().globalData.holidays
         let holidayArr = []
@@ -39,7 +45,6 @@ Page({
         this.setData({
             holidayArr: holidayArr
         })
-
     },
     GetYearMonths(year, month) {
         let fullDate = String(year) + '年' + String(month) + '月';
@@ -63,6 +68,7 @@ Page({
             let index = e.currentTarget.dataset.index + 1
             let dates = this.SetDates(year, index)
             datesOfYear.push(dates)
+            this.setData({ monthRestDayArr: this.data.monthRestDayArr })
         } else {
             this.setData({ isAllShow: false })
             for (let i = 1; i <= 12; i++) {
@@ -72,10 +78,14 @@ Page({
         }
         this.setData({
             datesOfYear: datesOfYear,
-            yearMonths: this.data.yearMonths
+            yearMonths: this.data.yearMonths,
         })
     },
     SetDates(year, month) {
+        this.data.monthRestDayArr = {
+            allRestDays: 0,
+            remainingRestDays: 0
+        }
         this.GetYearMonths(year, month)
         let firstWeekDay = this.GetMonthFirstWeekDay(year, month)
         let lastDayOfMonth = this.GetMonthLastDay(year, month)
@@ -118,10 +128,36 @@ Page({
                     countDays++
                     tempArr.push("")
                 }
+                //判断是否为休息日同时是否在compensatoryLeaveDays以及holidayArr中
+                this.judgeIsRestDay(year, month, countDays)
             }
             datesArr.push(tempArr)
         }
         return datesArr
+    },
+    judgeIsRestDay(year, month, day) {
+        let judgeDate = year + "/" + month + "/" + day
+        let monthDay = month + "/" + day
+        const date = new Date(judgeDate);
+        const nowDate = new Date();
+        const dayOfWeek = date.getDay();
+        if (dayOfWeek === 6 || dayOfWeek === 0) {
+            //判断是否调休
+            if (!this.data.compensatoryLeaveDays.includes(monthDay)) {
+                this.data.monthRestDayArr.allRestDays += 1
+                if (nowDate < date) {
+                    this.data.monthRestDayArr.remainingRestDays += 1
+                }
+            }
+        } else {
+            //判断是否加班
+            if (this.data.holidayArr.includes(monthDay)) {
+                this.data.monthRestDayArr.allRestDays += 1
+                if (nowDate < date) {
+                    this.data.monthRestDayArr.remainingRestDays += 1
+                }
+            }
+        }
     },
     handleSetDatesItem(tempArrItem, year, month, countDays) {
         let lunar = getLunar(year, month, countDays);
@@ -145,6 +181,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+        this.handleCountHolidayArr()
         this.setData({
             today: new Date().getDate(),
             monthNow: new Date().getMonth() + 1
@@ -163,7 +200,6 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-        this.handleCountHolidayArr()
         if (typeof this.getTabBar === 'function' && this.getTabBar()) {
             this.getTabBar().setData({
                 selected: 1
