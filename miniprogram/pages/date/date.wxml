@@ -43,7 +43,6 @@
         </view>
         <view class="date-analysis" wx:if="{{isAllShow}}">
             <text>本月放假共{{monthRestDayArr.allRestDays}}天，剩余{{monthRestDayArr.remainingRestDays}}天</text>
-            <!-- <text>{{monthRestDayArr[0]}}</text> -->
         </view>
     </block>
 </view>
