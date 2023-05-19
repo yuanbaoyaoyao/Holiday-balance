@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/legalHolidays/legalHolidays",
         "pages/date/date",
+        "pages/legalHolidays/legalHolidays",
         "pages/vacationRemain/vacationRemain",
         "pages/about/about",
         "pages/logs/logs"
