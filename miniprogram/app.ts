@@ -12,9 +12,32 @@ App<IAppOption>({
             { name: "端午节", date: "6/22-6/24", count: "3天", color: "#B1C5AC", },
             { name: "中秋节", date: "9/29-9/29", count: "1天", },
             { name: "国庆节", date: "9/30-10/6", count: "7天", color: "#FB7A5A", },
-        ]
+        ],
+        holidayArr: [],
+    },
+    handleCountHolidayArr() {
+        let holidays = this.globalData.holidays
+        let holidayArr = []
+        for (let holiday of holidays) {
+            let startYear = new Date().getFullYear()
+            let endYear = new Date().getFullYear()
+            let holidayDateArr = holiday.date.split("-")
+            if (holiday.startYear != null) {
+                startYear = holiday.startYear
+                endYear = holiday.endYear
+            }
+            let startDate = new Date(startYear + "/" + holidayDateArr[0]);
+            let endDate = new Date(endYear + "/" + holidayDateArr[1]);
+            while (startDate <= endDate) {
+                let date = startDate.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+                holidayArr.push(date);
+                startDate.setDate(startDate.getDate() + 1);
+            }
+        }
+        this.globalData.holidayArr = holidayArr
     },
     onLaunch() {
+        this.handleCountHolidayArr()
         // 展示本地存储能力
         const logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())

@@ -9,7 +9,7 @@ Page({
     data: {
         weekdays: ["一", "二", "三", "四", "五", "六", "日",],
         compensatoryLeaveDays: getApp().globalData.compensatoryLeaveDays,
-        holidayArr: [],
+        holidayArr: getApp().globalData.holidayArr,
         monthRestDayArr: {
             allRestDays: 0,
             remainingRestDays: 0
@@ -23,29 +23,6 @@ Page({
         array: 1
     },
 
-    handleCountHolidayArr() {
-        let holidays = getApp().globalData.holidays
-        let holidayArr = []
-        for (let holiday of holidays) {
-            let startYear = new Date().getFullYear()
-            let endYear = new Date().getFullYear()
-            let holidayDateArr = holiday.date.split("-")
-            if (holiday.startYear != null) {
-                startYear = holiday.startYear
-                endYear = holiday.endYear
-            }
-            let startDate = new Date(startYear + "/" + holidayDateArr[0]);
-            let endDate = new Date(endYear + "/" + holidayDateArr[1]);
-            while (startDate <= endDate) {
-                let date = startDate.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
-                holidayArr.push(date);
-                startDate.setDate(startDate.getDate() + 1);
-            }
-        }
-        this.setData({
-            holidayArr: holidayArr
-        })
-    },
     GetYearMonths(year, month) {
         let fullDate = String(year) + '年' + String(month) + '月';
         this.data.yearMonths.push(fullDate)
@@ -181,7 +158,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-        this.handleCountHolidayArr()
         this.setData({
             today: new Date().getDate(),
             monthNow: new Date().getMonth() + 1

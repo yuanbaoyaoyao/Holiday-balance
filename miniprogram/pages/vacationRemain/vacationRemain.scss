@@ -1,11 +1,19 @@
 /* pages/vacationRemain/vacationRemain.wxss */
 /**index.wxss**/
-ec-canvas {
-    width: 100%;
-    height: 30%;
-}
-
 .chart-container {
+    margin-top: 20rpx;
     width: 900rpx;
     height: 700rpx;
+}
+
+.remain-details {
+    margin-top: 10rpx;
+}
+
+.remain-detail-item {
+    background-color: #F8F8F6;
+    margin: 20rpx;
+    font-size: 50rpx;
+    border-radius: 20rpx;
+    padding: 20rpx
 }
