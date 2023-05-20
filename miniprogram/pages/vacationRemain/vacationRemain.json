@@ -1,6 +1,6 @@
 {
     "usingComponents": {
         "occupy-bottom": "/components/occupyBottom/occupyBottom",
-        "ec-canvas": "../../ec-canvas/ec-canvas"
+        "ec-canvas": "/components/ec-canvas/ec-canvas"
     }
 }

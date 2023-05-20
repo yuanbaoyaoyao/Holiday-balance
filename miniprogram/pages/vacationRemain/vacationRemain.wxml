@@ -1,15 +1,16 @@
 <!--pages/vacationRemain/vacationRemain.wxml-->
-<!-- <view>
-  <view>剩余日期{{remainDays}}</view>
-  <view>已过时间{{pastDays}}</view>
-  <view>总周末{{weekendInfo.weekendDays}}</view>
-  <view>剩余周末{{weekendInfo.remainWeekendDays}}</view>
-  <view>剩余总假日{{weekendInfo.remainWeekendDays+5}}</view>
-  <view>总休息天数{{weekendInfo.weekendDays+holidays}}</view>
-</view> -->
+
 <!--index.wxml-->
-<view class="chart_one" >
-  <ec-canvas id="mychart" type='2d' canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
+<view class="chart-container">
+    <ec-canvas id="mychart" type='2d' canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
+</view>
+<view>
+    <view>剩余日期{{remainDays}}</view>
+    <view>已过时间{{pastDays}}</view>
+    <view>总周末{{weekendInfo.weekendDays}}</view>
+    <view>剩余周末{{weekendInfo.remainWeekendDays}}</view>
+    <view>剩余总假日{{weekendInfo.remainWeekendDays+5}}</view>
+    <view>总休息天数{{weekendInfo.weekendDays+holidays}}</view>
 </view>
 
 <!-- 防止底部自定义导航栏挡住内容 -->
