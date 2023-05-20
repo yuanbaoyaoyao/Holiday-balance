@@ -14,9 +14,9 @@
                 <block wx:for="{{dates}}" wx:key="index" wx:for-index="datesIndex">
                     <view class="date-array">
                         <view class="date-item" wx:for="{{item}}" wx:for-index="itemIndex" wx:for-item="date" wx:key="itemIndex">
-                            <view class="{{today==date.gregorian&&monthNow==index+1?'date-highlight':''}} date-item-info">
+                            <view class="{{today==date.gregorian&&(((monthNow==index+1)&&!isAllShow)||(monthNow==nowClickMonth)&&isAllShow)?'date-highlight':''}} date-item-info">
                                 <view class="date-item-gregorian">
-                                    {{date.gregorian}}
+                                    {{date.gregorian }}
                                     <wxs module="m1">
                                         var isWork = function (array, value) {
                                             if (array.indexOf(value) != -1) {

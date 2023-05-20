@@ -18,6 +18,7 @@ Page({
         datesOfYear: [],
         today: '',
         monthNow: '',
+        nowClickMonth: '',
         isAllShow: false,
         loading: false,
         array: 1
@@ -48,6 +49,7 @@ Page({
         this.setData({
             datesOfYear: datesOfYear,
             yearMonths: this.data.yearMonths,
+            nowClickMonth: index,
         })
     },
     setDatesOfYear(e) {
@@ -68,7 +70,10 @@ Page({
             let index = e.currentTarget.dataset.index + 1
             let dates = this.SetDates(year, index)
             datesOfYear.push(dates)
-            this.setData({ monthRestDayArr: this.data.monthRestDayArr })
+            this.setData({
+                monthRestDayArr: this.data.monthRestDayArr,
+                nowClickMonth: index,
+            })
         } else {
             this.setData({ isAllShow: false })
             for (let i = 1; i <= 12; i++) {
