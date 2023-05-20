@@ -27,6 +27,29 @@ Page({
         let fullDate = String(year) + '年' + String(month) + '月';
         this.data.yearMonths.push(fullDate)
     },
+    setNowDatesOfMonth(month) {
+        this.setData({
+            loading: true
+        })
+        setTimeout(() => {
+            this.setData({
+                loading: false
+            })
+        }, 500);
+        this.data.yearMonths = []
+        this.data.datesOfYear = []
+        const year = new Date().getFullYear()
+        let datesOfYear = []
+        this.setData({ isAllShow: true })
+        let index = month
+        let dates = this.SetDates(year, index)
+        datesOfYear.push(dates)
+        this.setData({ monthRestDayArr: this.data.monthRestDayArr })
+        this.setData({
+            datesOfYear: datesOfYear,
+            yearMonths: this.data.yearMonths,
+        })
+    },
     setDatesOfYear(e) {
         this.setData({
             loading: true
@@ -162,7 +185,8 @@ Page({
             today: new Date().getDate(),
             monthNow: new Date().getMonth() + 1
         })
-        this.setDatesOfYear()
+        //直接定位到当前月份
+        this.setNowDatesOfMonth(this.data.monthNow)
     },
 
     /**
