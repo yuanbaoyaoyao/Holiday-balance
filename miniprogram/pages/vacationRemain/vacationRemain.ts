@@ -45,7 +45,7 @@ function initChart(canvas, width, height, dpr) {
                 max: getDaysInYear(),
                 splitNumber: getDaysInYear() == '365' ? 5 : 6,
                 itemStyle: {
-                    color: '#FFAB91'
+                    color: '#8999D6'
                 },
                 progress: {
                     show: true,
@@ -111,7 +111,7 @@ function initChart(canvas, width, height, dpr) {
                 min: 0,
                 max: getDaysInYear(),
                 itemStyle: {
-                    color: '#FD7347'
+                    color: '#5A6FC4'
                 },
                 progress: {
                     show: true,

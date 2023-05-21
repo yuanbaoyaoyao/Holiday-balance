@@ -5,11 +5,22 @@
     <ec-canvas id="mychart" type='2d' canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
 </view>
 <view class="remain-details">
-    <view class="remain-detail-item" bindtap="handleGetChart" data-index="1">剩余天数{{remainDays}}天</view>
-    <!-- <view class="remain-detail-item" bindtap="handleGetChart" data-index="2">剩余假日{{weekendInfo.remainWeekendDays+5}}</view> -->
-    <view class="remain-detail-item" bindtap="handleGetChart" data-index="2">剩余假日{{remainingHolidays}}</view>
+    <view class="remain-detail-item" bindtap="handleGetChart" data-index="1">
+        <text>剩余天数</text>
+        <text class="remain-detail-item-highlight">{{remainDays}}</text>
+        <text>天</text>
+    </view>
+    <view class="remain-detail-item" bindtap="handleGetChart" data-index="2">
+        <text>剩余假日</text>
+        <text class="remain-detail-item-highlight">{{remainingHolidays}}</text>
+        <text>天</text>
+    </view>
     <!-- 是否有意义 -->
-    <view class="remain-detail-item" bindtap="handleGetChart" data-index="3">剩余周末{{weekendInfo.remainWeekendDays}}</view>
+    <view class="remain-detail-item" bindtap="handleGetChart" data-index="3">
+        <text>剩余周末</text>
+        <text class="remain-detail-item-highlight">{{weekendInfo.remainWeekendDays}}</text>
+        <text>天</text>
+    </view>
 </view>
 
 <!-- 防止底部自定义导航栏挡住内容 -->

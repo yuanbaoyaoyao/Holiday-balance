@@ -12,8 +12,14 @@
 
 .remain-detail-item {
     background-color: #F8F8F6;
-    margin: 20rpx;
-    font-size: 50rpx;
+    margin: 25rpx;
     border-radius: 20rpx;
-    padding: 20rpx
+    padding: 20rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    font-size: 35rpx;
+}
+
+.remain-detail-item-highlight {
+    font-size: 50rpx;
 }

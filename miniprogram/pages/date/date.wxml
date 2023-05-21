@@ -42,7 +42,11 @@
             </scroll-view>
         </view>
         <view class="date-analysis" wx:if="{{isAllShow}}">
-            <text>本月放假共{{monthRestDayArr.allRestDays}}天，剩余{{monthRestDayArr.remainingRestDays}}天</text>
+            <text>本月假日共</text>
+            <text class="date-analysis-highlight">{{monthRestDayArr.allRestDays}}</text>
+            <text>天，剩余假日</text>
+            <text class="date-analysis-highlight">{{monthRestDayArr.remainingRestDays}}</text>
+            <text>天</text>
         </view>
     </block>
 </view>
