@@ -43,7 +43,6 @@ App<IAppOption>({
         }
         this.globalData.holidayArr = holidayArr
         this.globalData.nowYearHolidayArr = nowYearHolidayArr
-        console.log("nowYearHolidayArr:", nowYearHolidayArr)
     },
     onLaunch() {
         this.handleCountHolidayArr()

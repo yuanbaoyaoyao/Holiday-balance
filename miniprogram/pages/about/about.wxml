@@ -4,8 +4,10 @@
         <image class="avatar" mode="aspectFit" src="/assets/cat_avatar.png" />
     </view>
     <view class="about-me">
-        <text>炎之魔法师元宝</text>
+        <text class="about-me-title">作者：</text>
+        <text class="about-me-name">炎之魔法师元宝</text>
     </view>
+    <view class="about-other-apps">（元宝正在研究新的魔法...）</view>
 </view>
 
 <!-- 防止底部自定义导航栏挡住内容 -->
