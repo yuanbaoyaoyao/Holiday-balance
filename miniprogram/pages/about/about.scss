@@ -1,1 +1,17 @@
 /* pages/about/about.wxss */
+.about-container{
+    padding: 20rpx;
+}
+.about-me{
+    text-align: center;
+}
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20rpx;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+}

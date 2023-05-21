@@ -14,15 +14,19 @@ App<IAppOption>({
             { name: "国庆节", date: "9/30-10/6", count: "7天", color: "#FB7A5A", },
         ],
         holidayArr: [],
+        nowYearHolidayArr: []
     },
     handleCountHolidayArr() {
         let holidays = this.globalData.holidays
         let holidayArr = []
+        let nowYearHolidayArr = []
         for (let holiday of holidays) {
+
             let startYear = new Date().getFullYear()
             let endYear = new Date().getFullYear()
             let holidayDateArr = holiday.date.split("-")
             if (holiday.startYear != null) {
+
                 startYear = holiday.startYear
                 endYear = holiday.endYear
             }
@@ -30,11 +34,16 @@ App<IAppOption>({
             let endDate = new Date(endYear + "/" + holidayDateArr[1]);
             while (startDate <= endDate) {
                 let date = startDate.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+                if (startDate.getFullYear() == new Date().getFullYear()) {
+                    nowYearHolidayArr.push(date)
+                }
                 holidayArr.push(date);
                 startDate.setDate(startDate.getDate() + 1);
             }
         }
         this.globalData.holidayArr = holidayArr
+        this.globalData.nowYearHolidayArr = nowYearHolidayArr
+        console.log("nowYearHolidayArr:", nowYearHolidayArr)
     },
     onLaunch() {
         this.handleCountHolidayArr()

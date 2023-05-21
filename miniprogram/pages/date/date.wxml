@@ -23,7 +23,7 @@
                                                 return "班"
                                             }
                                         }
-                                        var isRest = function (array, value) {
+                                        var isRest = function (array, value, nowYear) {
                                             if (array.indexOf(value) != -1) {
                                                 return "休"
                                             }
@@ -32,7 +32,7 @@
                                         module.exports.isWork = isWork
                                     </wxs>
                                     <text class="date-item-gregorian-highLight-work">{{m1.isWork(compensatoryLeaveDays,date.monthDay)}}</text>
-                                    <text class="date-item-gregorian-highLight-reset">{{m1.isRest(holidayArr,date.monthDay)}}</text>
+                                    <text class="date-item-gregorian-highLight-reset">{{m1.isRest(holidayArr,date.monthDay,yearNow)}}</text>
                                 </view>
                                 <text class="date-item-lunar">{{date.lunar}}</text>
                             </view>

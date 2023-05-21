@@ -9,7 +9,9 @@ Page({
     data: {
         weekdays: ["一", "二", "三", "四", "五", "六", "日",],
         compensatoryLeaveDays: getApp().globalData.compensatoryLeaveDays,
-        holidayArr: getApp().globalData.holidayArr,
+        //holidayArr中假期包含上一年的
+        // holidayArr: getApp().globalData.holidayArr,
+        holidayArr: getApp().globalData.nowYearHolidayArr,
         monthRestDayArr: {
             allRestDays: 0,
             remainingRestDays: 0
@@ -18,6 +20,7 @@ Page({
         datesOfYear: [],
         today: '',
         monthNow: '',
+        yearNow: '',
         nowClickMonth: '',
         isAllShow: false,
         loading: false,
@@ -188,7 +191,8 @@ Page({
     onLoad() {
         this.setData({
             today: new Date().getDate(),
-            monthNow: new Date().getMonth() + 1
+            monthNow: new Date().getMonth() + 1,
+            yearNow: new Date().getFullYear()
         })
         //直接定位到当前月份
         this.setNowDatesOfMonth(this.data.monthNow)

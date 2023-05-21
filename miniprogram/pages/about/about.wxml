@@ -1,4 +1,12 @@
 <!--pages/about/about.wxml-->
-<text>这是关于我</text>
+<view class="about-container">
+    <view class="avatar-container">
+        <image class="avatar" mode="aspectFit" src="/assets/cat_avatar.png" />
+    </view>
+    <view class="about-me">
+        <text>炎之魔法师元宝</text>
+    </view>
+</view>
+
 <!-- 防止底部自定义导航栏挡住内容 -->
 <occupy-bottom></occupy-bottom>

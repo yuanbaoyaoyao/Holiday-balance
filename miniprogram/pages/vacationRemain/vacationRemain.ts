@@ -158,7 +158,9 @@ Page({
     },
     data: {
         compensatoryLeaveDays: getApp().globalData.compensatoryLeaveDays,
-        holidayArr: getApp().globalData.holidayArr,
+        //holidayArr中假期包含上一年的
+        // holidayArr: getApp().globalData.holidayArr,
+        holidayArr: getApp().globalData.nowYearHolidayArr,
         remainDays: '',
         pastDays: '',
         remainingHolidays: 0,
