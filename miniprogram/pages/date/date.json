@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "occupy-bottom": "/components/occupyBottom/occupyBottom"
-  }
+  },
+  "navigationBarTitleText": "日期"
 }

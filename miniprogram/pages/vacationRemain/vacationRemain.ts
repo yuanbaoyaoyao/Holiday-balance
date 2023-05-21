@@ -173,11 +173,13 @@ Page({
         holidayDates: [],
         ec: {
             onInit: initChart
-        }
+        },
+        nowHoverIndex: 1
     },
     handleGetChart(e) {
         let that = this
         let index = e.currentTarget.dataset.index
+        this.setData({ nowHoverIndex: index })
         switch (index) {
             case "1":
                 chart.setOption({
@@ -233,7 +235,7 @@ Page({
                             splitNumber: this.handleCountSplitNumber(that.data.remainingHolidays),
                             max: that.data.weekendInfo.weekendDays + that.data.holidays,
                             detail: {
-                                formatter: '剩余假日{value}天',
+                                formatter: '剩余假期{value}天',
                             },
                             data: [
                                 {

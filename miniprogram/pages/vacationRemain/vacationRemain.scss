@@ -11,7 +11,7 @@
 }
 
 .remain-detail-item {
-    background-color: #F8F8F6;
+    background-color: #ECF0F1;
     margin: 25rpx;
     border-radius: 20rpx;
     padding: 20rpx;
@@ -20,6 +20,23 @@
     font-size: 35rpx;
 }
 
+.remain-detail-item-hover {
+    animation-name: highlightRemainDetailItem;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
 .remain-detail-item-highlight {
     font-size: 50rpx;
+}
+
+@keyframes highlightRemainDetailItem {
+
+    0% {
+        background-color: #ECF0F1;
+    }
+
+    100% {
+        background-color: #8999D6;
+    }
 }
