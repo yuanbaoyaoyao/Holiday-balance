@@ -14,7 +14,8 @@ App<IAppOption>({
             { name: "国庆节", date: "9/30-10/6", count: "7天", color: "#FB7A5A", },
         ],
         holidayArr: [],
-        nowYearHolidayArr: []
+        nowYearHolidayArr: [],
+        globalColor: "#3A82FB"
     },
     handleCountHolidayArr() {
         let holidays = this.globalData.holidays

@@ -1,9 +1,9 @@
 {
     "pages": [
+        "pages/legalHolidays/legalHolidays",
         "pages/vacationRemain/vacationRemain",
         "pages/date/date",
         "pages/about/about",
-        "pages/legalHolidays/legalHolidays",
         "pages/logs/logs"
     ],
     "window": {
