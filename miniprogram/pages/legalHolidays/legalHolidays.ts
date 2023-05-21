@@ -1,5 +1,4 @@
 // pages/legalHolidays/legalHolidays.ts
-//TODO 写一个总的数据，其他页面直接根据此数据就可以计算
 Page({
     /**
      * 页面的初始数据
@@ -31,6 +30,7 @@ Page({
         zongziItemAnimationClass: "",
         zongziAssetsAnimationClass: "",
         nextHolidayIndex: 0,
+        canIShowCountDown: false,
         currentHolidayIndex: null,
         countDownDays: 0,
         countDownDaysStyle: "opacity: 0;",
@@ -87,7 +87,8 @@ Page({
                 }
                 this.setData({
                     countDownDays: countDown,
-                    nextHolidayIndex: i
+                    nextHolidayIndex: i,
+                    canIShowCountDown: true
                 })
                 break;
             }

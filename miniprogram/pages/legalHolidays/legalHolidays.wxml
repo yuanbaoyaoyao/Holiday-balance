@@ -8,9 +8,8 @@
                     <view class="holidays-date">{{item.date}}</view>
                     <view class="holidays-count">{{item.count}}</view>
                 </view>
-                <!-- <view class="holidays-count-down-container">还有<text class="holidays-count-down">36</text>天</view> -->
             </view>
-            <view class="wrap">
+            <view class="wrap" wx:if="{{canIShowCountDown}}">
                 <!-- 点击显示还有多少天到达 -->
                 <view class="ribbon" wx:if="{{index==nextHolidayIndex&&currentHolidayIndex==null}}" bindtap="handleShowCountDown">
                     <text style="{{nextFestivalStyle}}">下一个假期</text>
