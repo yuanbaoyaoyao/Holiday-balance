@@ -4,19 +4,20 @@ Page({
      * 页面的初始数据
      */
     data: {
+        holidayKeys: ["元旦", "春节", "清明节", "劳动节", "端午节", "中秋节", "国庆节"],
         holidays: getApp().globalData.holidays,
         show: false,
         buttons: [
             {
                 type: 'default',
                 className: '',
-                text: '辅助操作',
+                text: '重置',
                 value: 0
             },
             {
                 type: 'primary',
                 className: '',
-                text: '主操作',
+                text: '确定',
                 value: 1
             }
         ],
@@ -35,7 +36,8 @@ Page({
         countDownDays: 0,
         countDownDaysStyle: "opacity: 0;",
         nextFestivalStyle: "",
-        isShowCountDownDays: false
+        isShowCountDownDays: false,
+        actionFestival: ""
     },
     handleShowCountDown() {
         if (!this.data.isShowCountDownDays) {
@@ -144,10 +146,10 @@ Page({
     buttontap(e) {
         console.log(e.detail)
     },
-    handleTapView() {
-        console.log("点击了画面")
+    handleTapView(e) {
         this.setData({
-            show: true
+            show: true,
+            actionFestival: e.currentTarget.dataset.name
         })
     },
 

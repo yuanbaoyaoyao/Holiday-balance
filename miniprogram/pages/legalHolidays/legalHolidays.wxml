@@ -1,7 +1,9 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
 <view class="holidays" style="z-index: 100;">
     <block wx:for="{{holidays}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-        <view class="holidays-item {{item.name=='春节'?'spring-container':''}} {{item.name=='中秋节'?'moon-festival-container':''}}" style="background-color: {{item.color}};{{item.image}}" bindlongtap="handleTapView">
+    <!-- 暂时不弄自定义，太麻烦，而且好像用处不大 -->
+        <!-- <view class="holidays-item {{item.name=='春节'?'spring-container':''}} {{item.name=='中秋节'?'moon-festival-container':''}}" style="background-color: {{item.color}};{{item.image}}" bindlongtap="handleTapView" data-name="{{item.name}}"> -->
+        <view class="holidays-item {{item.name=='春节'?'spring-container':''}} {{item.name=='中秋节'?'moon-festival-container':''}}" style="background-color: {{item.color}};" data-name="{{item.name}}">
             <view class="holidays-item-container ">
                 <view class="holidays-name">{{item.name}}</view>
                 <view class="holidays-count-container">
@@ -74,17 +76,17 @@
         </view>
     </block>
 </view>
-<mp-half-screen-dialog extClass="holidays-half-screen-dialog" bindbuttontap="buttontap" show="{{show}}" title="自定义" subTitle="" desc="" tips="" buttons="{{buttons}}">
+<!-- 暂时不弄自定义，太麻烦，而且好像用处不大 -->
+<!-- <mp-half-screen-dialog extClass="holidays-half-screen-dialog" bindbuttontap="buttontap" show="{{show}}" title="自定义" subTitle="" desc="" tips="" buttons="{{buttons}}">
     <view slot="desc" class="holidays-preview-box" bindtap="chooseImage">
         <view>
-            <text>自定义背景图片</text>
+            <text>自定义</text>
+            <text style="font-size: 35rpx;">{{actionFestival}}</text>
+            <text>背景图片</text>
             <image wx:if="{{savedFilePath!=''}}" class="holidays-preview" src="{{savedFilePath}}" mode="aspectFit"></image>
         </view>
-        <view>
-            <text>自定义背景颜色</text>
-        </view>
     </view>
-</mp-half-screen-dialog>
+</mp-half-screen-dialog> -->
 
 <!-- 防止底部自定义导航栏挡住内容 -->
 <occupy-bottom></occupy-bottom>
