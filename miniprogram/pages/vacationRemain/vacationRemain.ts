@@ -92,7 +92,7 @@ function initChart(canvas, width, height, dpr) {
                     lineHeight: 40,
                     borderRadius: 8,
                     offsetCenter: [0, '-15%'],
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight: 'bolder',
                     formatter: '剩余天数{value}天',
                     color: 'inherit'
