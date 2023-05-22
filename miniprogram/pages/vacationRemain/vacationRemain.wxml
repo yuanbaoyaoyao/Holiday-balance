@@ -2,7 +2,7 @@
 
 <!--index.wxml-->
 <view class="chart-container">
-    <ec-canvas id="mychart" type='2d' canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
+    <ec-canvas id="mychart" type='2d' canvas-id="mychart" ec="{{ ec }}" ></ec-canvas>
 </view>
 <view class="remain-details">
     <view class="remain-detail-item {{nowHoverIndex==1? 'remain-detail-item-hover':''}}" bindtap="handleGetChart" data-index="1">

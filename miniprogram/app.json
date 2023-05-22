@@ -3,8 +3,7 @@
         "pages/legalHolidays/legalHolidays",
         "pages/vacationRemain/vacationRemain",
         "pages/date/date",
-        "pages/about/about",
-        "pages/logs/logs"
+        "pages/about/about"
     ],
     "window": {
         "backgroundTextStyle": "light",
