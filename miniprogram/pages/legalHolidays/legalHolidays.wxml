@@ -1,11 +1,14 @@
 <!--pages/legalHolidays/legalHolidays.wxml-->
 <view class="holidays" style="z-index: 100;">
     <block wx:for="{{holidays}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-    <!-- 暂时不弄自定义，太麻烦，而且好像用处不大 -->
+        <!-- 暂时不弄自定义，太麻烦，而且好像用处不大 -->
         <!-- <view class="holidays-item {{item.name=='春节'?'spring-container':''}} {{item.name=='中秋节'?'moon-festival-container':''}}" style="background-color: {{item.color}};{{item.image}}" bindlongtap="handleTapView" data-name="{{item.name}}"> -->
         <view class="holidays-item {{item.name=='春节'?'spring-container':''}} {{item.name=='中秋节'?'moon-festival-container':''}}" style="background-color: {{item.color}};" data-name="{{item.name}}">
             <view class="holidays-item-container ">
-                <view class="holidays-name">{{item.name}}</view>
+                <!-- <view class="holidays-name">{{item.name}}</view> -->
+                //TODO 图片不清晰看看怎么回事
+                <image wx:if="{{index<=1}}" src="{{item.fontSvg}}" style="height: 50rpx;width:100rpx; margin-bottom: 10rpx;" />
+                <image wx:else src="{{item.fontSvg}}" style="height: 50rpx;width:150rpx; margin-bottom: 10rpx;" />
                 <view class="holidays-count-container">
                     <view class="holidays-date">{{item.date}}</view>
                     <view class="holidays-count">{{item.count}}</view>

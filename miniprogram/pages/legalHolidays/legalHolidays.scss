@@ -8,6 +8,8 @@
 @import './scss/moonFestival.scss';
 @import './scss/nationalDay.scss';
 
+//小程序font-family无效
+
 .holidays-item {
     width: 80vw;
     margin: 45rpx;
@@ -55,7 +57,8 @@
     width: inherit;
     text-align: center;
     font-size: 60rpx;
-    font-family: 楷体, Arial, Lucida Grande, Tahoma, sans-serif;
+    // font-family: 楷体, Arial, Lucida Grande, Tahoma, sans-serif;
+    font-family: cursive;
 }
 
 .holidays-half-screen-dialog {
@@ -122,7 +125,7 @@
 
     text {
         position: absolute;
-        top: 3rpx;
+        top: -1rpx;
         right: 110rpx;
     }
 }
