@@ -26,7 +26,32 @@ Page({
         loading: false,
         array: 1
     },
+    handleCountHolidayArr() {
+        let holidays = getApp().globalData.holidays
+        let nowYearHolidayArr = []
+        for (let holiday of holidays) {
+            let startYear = new Date().getFullYear()
+            let endYear = new Date().getFullYear()
+            let holidayDateArr = holiday.date.split("-")
+            if (holiday.startYear != null) {
 
+                startYear = holiday.startYear
+                endYear = holiday.endYear
+            }
+            let startDate = new Date(startYear + "/" + holidayDateArr[0]);
+            let endDate = new Date(endYear + "/" + holidayDateArr[1]);
+            while (startDate <= endDate) {
+                let date = startDate.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+                if (startDate.getFullYear() == new Date().getFullYear()) {
+                    nowYearHolidayArr.push(date)
+                }
+                startDate.setDate(startDate.getDate() + 1);
+            }
+        }
+        this.setData({
+            holidayArr: nowYearHolidayArr
+        })
+    },
     GetYearMonths(year, month) {
         let fullDate = String(year) + '年' + String(month) + '月';
         this.data.yearMonths.push(fullDate)

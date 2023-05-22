@@ -34,7 +34,10 @@ App<IAppOption>({
             let startDate = new Date(startYear + "/" + holidayDateArr[0]);
             let endDate = new Date(endYear + "/" + holidayDateArr[1]);
             while (startDate <= endDate) {
-                let date = startDate.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+                //toLocaleDateString微信小程序有bug
+                const month = startDate.getMonth() + 1;
+                const day = startDate.getDate();
+                const date = `${month}/${day}`;
                 if (startDate.getFullYear() == new Date().getFullYear()) {
                     nowYearHolidayArr.push(date)
                 }

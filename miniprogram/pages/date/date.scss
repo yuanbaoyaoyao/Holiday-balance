@@ -1,12 +1,12 @@
 /* pages/date/date.wxss */
 //实现点击月份，切换整理和对应月份，渐变透明消失
 @import "./date.skeleton.wxss";
-$weekday-size:10px;
+$weekday-size:20rpx;
 $padding-size:40rpx;
 
 .date-now {
-  font-size: 18px;
-  margin: 10px;
+  font-size: 36rpx;
+  margin: 20rpx;
   display: flex;
   justify-content: center;
 }
@@ -75,7 +75,8 @@ $padding-size:40rpx;
   position: absolute;
   right: -15rpx;
   top: 0px;
-  font-size: 8px;
+  font-weight: 500;;
+  font-size: 16rpx;
 }
 
 .date-item-gregorian-highLight-reset {
@@ -93,8 +94,8 @@ $padding-size:40rpx;
 
 .date-analysis {
   background-color: #FFFFFF;
-  margin: 10px;
-  border-radius: 10px;
+  margin: 20rpx;
+  border-radius: 20rpx;
   padding-left: $padding-size;
   padding-right: $padding-size;
   font-size: 35rpx;
