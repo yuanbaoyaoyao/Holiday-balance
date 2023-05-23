@@ -263,7 +263,8 @@ Page({
                             let year = new Date().getFullYear()
                             str += params.marker + year + "年" + "\n"
                             str += "     " + "总周末" + that.data.weekendInfo.weekendDays + "天" + "\n"
-                            str += "     " + "剩余周末" + that.data.weekendInfo.remainWeekendDays + "天"
+                            str += "     " + "剩余周末" + that.data.weekendInfo.remainWeekendDays + "天" + "\n"
+                            str += "     " + "(不包含调休)"
                             return str
                         }
                     },
@@ -310,18 +311,29 @@ Page({
     },
 
     countWeekends() {
-        let weekendDays = 0;
         let date = new Date()
-        for (let i = this.data.pastDays; i < getDaysInYear(); i++) {
-            const currentDay = new Date(date.getFullYear(), 0, i).getDay();
+        for (let i = this.data.pastDays; i <= getDaysInYear(); i++) {
+            let nowDate = new Date(date.getFullYear(), 0, i)
+            let currentDay = nowDate.getDay();
+            let month = nowDate.getMonth() + 1
+            let day = nowDate.getDate()
+            let monthDay = month + "/" + day
             if (currentDay === 6 || currentDay === 0) {
-                this.data.weekendInfo.remainWeekendDays++;
+                if (!this.data.compensatoryLeaveDays.includes(monthDay)) {
+                    this.data.weekendInfo.remainWeekendDays++;
+                }
             }
         }
-        for (let i = 0; i < 365; i++) {
-            const currentDay = new Date(date.getFullYear(), 0, i).getDay();
+        for (let i = 1; i <= getDaysInYear(); i++) {
+            let nowDate = new Date(date.getFullYear(), 0, i)
+            let currentDay = nowDate.getDay();
+            let month = nowDate.getMonth() + 1
+            let day = nowDate.getDate()
+            let monthDay = month + "/" + day
             if (currentDay === 6 || currentDay === 0) {
-                this.data.weekendInfo.weekendDays++;
+                if (!this.data.compensatoryLeaveDays.includes(monthDay)) {
+                    this.data.weekendInfo.weekendDays++;
+                }
             }
         }
         this.setData({ weekendInfo: this.data.weekendInfo })
@@ -330,13 +342,14 @@ Page({
     countRemainingHolidays() {
         let weekendDays = 0
         let date = new Date()
-        for (let i = this.data.pastDays; i < getDaysInYear(); i++) {
+        for (let i = this.data.pastDays; i <= getDaysInYear(); i++) {
             const currentDay = new Date(date.getFullYear(), 0, i).getDay();
             let dateNow = new Date(date.getFullYear(), 0)
             dateNow.setDate(i)
             const month = dateNow.getMonth() + 1
             const day = dateNow.getDate()
             const monthDay = month + "/" + day
+            // 12/30
             if (currentDay === 6 || currentDay === 0) {
                 //判断是否调休
                 if (!this.data.compensatoryLeaveDays.includes(monthDay)) {
@@ -348,7 +361,6 @@ Page({
                     this.data.remainingHolidays += 1
                 }
             }
-
         }
         this.setData({ remainingHolidays: this.data.remainingHolidays })
     },
