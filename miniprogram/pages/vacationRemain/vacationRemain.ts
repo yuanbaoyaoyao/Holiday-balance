@@ -173,13 +173,12 @@ Page({
         holidayArr: getApp().globalData.nowYearHolidayArr,
         remainDays: '',
         pastDays: '',
+        totalHolidays: 0,
         remainingHolidays: 0,
         weekendInfo: {
             weekendDays: 0,
             remainWeekendDays: 0,
         },
-        //国家法定节假日
-        holidays: 11,
         holidayDates: [],
         ec: {
             onInit: initChart
@@ -230,14 +229,14 @@ Page({
                 break;
             case "2":
                 chart.setOption({
-                    max: that.data.weekendInfo.weekendDays + that.data.holidays,
+                    max: that.data.totalHolidays,
                     tooltip: {
                         show: false,
                         formatter: function (params) {
                             let str = ""
                             let year = new Date().getFullYear()
                             str += params.marker + year + "年" + "\n"
-                            str += "     " + "总假日" + (that.data.weekendInfo.weekendDays + that.data.holidays) + "天" + "\n"
+                            str += "     " + "总假日" + (that.data.totalHolidays) + "天" + "\n"
                             str += "     " + "剩余假日" + (that.data.remainingHolidays) + "天"
                             return str
                         }
@@ -245,7 +244,7 @@ Page({
                     series: [
                         {
                             splitNumber: this.handleCountSplitNumber(that.data.remainingHolidays),
-                            max: that.data.weekendInfo.weekendDays + that.data.holidays,
+                            max: that.data.totalHolidays,
                             detail: {
                                 formatter: '剩余假期{value}天',
                             },
@@ -256,7 +255,7 @@ Page({
                             ],
                         },
                         {
-                            max: that.data.weekendInfo.weekendDays + that.data.holidays,
+                            max: that.data.totalHolidays,
                             data: [
                                 {
                                     value: that.data.remainingHolidays
@@ -353,8 +352,7 @@ Page({
         this.setData({ weekendInfo: this.data.weekendInfo })
     },
 
-    countRemainingHolidays() {
-        let weekendDays = 0
+    countHolidays() {
         let date = new Date()
         for (let i = this.data.pastDays; i <= getDaysInYear(); i++) {
             const currentDay = new Date(date.getFullYear(), 0, i).getDay();
@@ -376,7 +374,30 @@ Page({
                 }
             }
         }
-        this.setData({ remainingHolidays: this.data.remainingHolidays })
+        for (let i = 1; i <= getDaysInYear(); i++) {
+            const currentDay = new Date(date.getFullYear(), 0, i).getDay();
+            let dateNow = new Date(date.getFullYear(), 0)
+            dateNow.setDate(i)
+            const month = dateNow.getMonth() + 1
+            const day = dateNow.getDate()
+            const monthDay = month + "/" + day
+            // 12/30
+            if (currentDay === 6 || currentDay === 0) {
+                //判断是否调休
+                if (!this.data.compensatoryLeaveDays.includes(monthDay)) {
+                    this.data.totalHolidays += 1
+                }
+            } else {
+                //判断是否加班
+                if (this.data.holidayArr.includes(monthDay)) {
+                    this.data.totalHolidays += 1
+                }
+            }
+        }
+        this.setData({
+            remainingHolidays: this.data.remainingHolidays,
+            totalHolidays: this.data.totalHolidays
+        })
     },
 
     /**
@@ -397,7 +418,7 @@ Page({
             remainDays: countRemainDays(),
             pastDays: this.countPastTime()
         })
-        this.countRemainingHolidays()
+        this.countHolidays()
         this.countWeekends()
     },
     onReady() {
