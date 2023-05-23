@@ -312,6 +312,7 @@ Page({
         }
     },
     handleCountSplitNumber(value) {
+        console.log("value:", value)
         for (let i = 4; i < 10; i++) {
             if (value % i == 0) return i
         }
