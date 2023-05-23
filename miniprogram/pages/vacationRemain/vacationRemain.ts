@@ -44,9 +44,8 @@ function initChart(canvas, width, height, dpr) {
             }
         },
         series: [
-
             {
-                radius: '72%',
+                radius: '70%',
                 type: 'gauge',
                 center: ['42%', '60%'],
                 startAngle: 200,
@@ -114,7 +113,7 @@ function initChart(canvas, width, height, dpr) {
                 ],
             },
             {
-                radius: '72%',
+                radius: '70%',
                 type: 'gauge',
                 center: ['42%', '60%'],
                 startAngle: 200,
