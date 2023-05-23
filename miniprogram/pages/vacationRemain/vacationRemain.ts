@@ -25,7 +25,15 @@ function initChart(canvas, width, height, dpr) {
     canvas.setChart(chart);
 
     var option = {
+        //tooltip有黑色阴影bug，暂时不用
         tooltip: {
+            show: false,
+            axisPointer: {
+                type: 'shadow',
+                shadowStyle: {
+                    color: 'transparent'
+                }
+            },
             formatter: function (params) {
                 let str = ""
                 let year = new Date().getFullYear()
@@ -36,7 +44,9 @@ function initChart(canvas, width, height, dpr) {
             }
         },
         series: [
+
             {
+                radius: '72%',
                 type: 'gauge',
                 center: ['42%', '60%'],
                 startAngle: 200,
@@ -78,7 +88,7 @@ function initChart(canvas, width, height, dpr) {
                 axisLabel: {
                     distance: -20,
                     color: '#999',
-                    fontSize: 20
+                    fontSize: 18
                 },
                 anchor: {
                     show: false
@@ -104,6 +114,7 @@ function initChart(canvas, width, height, dpr) {
                 ],
             },
             {
+                radius: '72%',
                 type: 'gauge',
                 center: ['42%', '60%'],
                 startAngle: 200,
@@ -184,6 +195,7 @@ Page({
             case "1":
                 chart.setOption({
                     tooltip: {
+                        show: false,
                         formatter: function (params) {
                             let str = ""
                             let year = new Date().getFullYear()
@@ -221,6 +233,7 @@ Page({
                 chart.setOption({
                     max: that.data.weekendInfo.weekendDays + that.data.holidays,
                     tooltip: {
+                        show: false,
                         formatter: function (params) {
                             let str = ""
                             let year = new Date().getFullYear()
@@ -258,6 +271,7 @@ Page({
                 chart.setOption({
                     max: that.data.weekendInfo.weekendDays,
                     tooltip: {
+                        show: false,
                         formatter: function (params) {
                             let str = ""
                             let year = new Date().getFullYear()

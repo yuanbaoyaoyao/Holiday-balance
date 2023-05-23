@@ -5,101 +5,102 @@ $weekday-size:20rpx;
 $padding-size:40rpx;
 
 .date-now {
-  font-size: 36rpx;
-  margin: 20rpx;
-  display: flex;
-  justify-content: center;
+    margin: 20rpx;
+    display: flex;
+    justify-content: center;
 }
 
 .date-now-weekday {
-  font-size: $weekday-size;
+    font-size: $weekday-size;
 }
 
 .date-weekdays {
-  text-align: center;
-  padding-right: $padding-size;
-  padding-left: $padding-size;
+    text-align: center;
+    padding-right: $padding-size;
+    padding-left: $padding-size;
 }
 
 .date-arrays {
-  padding-right: $padding-size;
-  padding-left: $padding-size;
-  background-color: #F4F4F6;
+    padding-right: $padding-size;
+    padding-left: $padding-size;
+    background-color: #F4F4F6;
 }
 
 .date-weekdays-item {
-  font-size: $weekday-size;
+    font-size: $weekday-size;
 }
 
 .date-array,
 .date-weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: 1fr;
-  gap: 10rpx;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 10rpx;
 }
 
 .date-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 2rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rpx;
 }
 
 .date-highlight {
-  background-color: #3A82FB;
-  color: white;
-  border-radius: 10rpx;
-  width: 100%;
-  padding-bottom: 5px;
+    background-color: #3A82FB;
+    color: white;
+    border-radius: 10rpx;
+    width: 100%;
+    padding-bottom: 5px;
 }
 
 .date-item-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1000;
 }
 
 .date-item-gregorian {
-  font-size: 40rpx;
-  width: 60rpx !important;
+    font-size: 40rpx;
+    width: 60rpx !important;
 }
 
 .date-item-gregorian-highLight-work,
 .date-item-gregorian-highLight-reset {
-  position: absolute;
-  right: -15rpx;
-  top: 0px;
-  font-weight: 500;;
-  font-size: 16rpx;
+    position: absolute;
+    right: -15rpx;
+    top: 0px;
+    font-weight: 500;
+    ;
+    font-size: 16rpx;
 }
 
 .date-item-gregorian-highLight-reset {
-  color: #61AA59;
+    color: #61AA59;
 }
 
 .date-item-gregorian-highLight-work {
-  color: #CC7651;
+    color: #CC7651;
 }
 
 .date-item-lunar {
-  text-align: center;
-  font-size: 24rpx;
+    text-align: center;
+    font-size: 24rpx;
 }
 
 .date-analysis {
-  background-color: #FFFFFF;
-  margin: 20rpx;
-  border-radius: 20rpx;
-  padding-left: $padding-size;
-  padding-right: $padding-size;
-  font-size: 35rpx;
+    background-color: #FFFFFF;
+    margin: 20rpx;
+    border-radius: 20rpx;
+    padding-left: $padding-size;
+    padding-right: $padding-size;
+    font-size: 35rpx;
 }
-.date-analysis-highlight{
+
+.date-analysis-highlight {
     font-size: 50rpx;
 }
