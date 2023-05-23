@@ -4,7 +4,9 @@
 <view class="date" wx:if="{{!loading}}">
     <block wx:for="{{datesOfYear}}" wx:key="index" wx:for-item="dates">
         <view class="date-now" bindtap="setDatesOfYear" data-index="{{index}}">
-            <text>{{yearMonths[index]}}</text>
+            <view class="date-now-info">{{yearMonths[index]}}
+                <image wx:if="{{isAllShow}}"  class="date-now-more" src="/assets/pull_down.svg"></image>
+            </view>
         </view>
         <view class="date-weekdays">
             <view class="date-weekdays-item" wx:for="{{weekdays}}" wx:key="index">{{item}}</view>

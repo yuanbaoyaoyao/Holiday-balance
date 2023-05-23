@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/legalHolidays/legalHolidays",
         "pages/date/date",
+        "pages/legalHolidays/legalHolidays",
         "pages/vacationRemain/vacationRemain",
         "pages/about/about"
     ],
@@ -24,7 +24,7 @@
         "borderStyle": "white",
         "list": [{
                 "pagePath": "pages/legalHolidays/legalHolidays",
-                "text": "我的假期"
+                "text": "我的假日"
             },
             {
                 "pagePath": "pages/date/date",

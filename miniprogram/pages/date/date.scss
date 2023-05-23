@@ -9,6 +9,17 @@ $padding-size:40rpx;
     margin: 20rpx;
     display: flex;
     justify-content: center;
+    align-items: center;
+    .date-now-info {
+        position: relative;
+
+        .date-now-more {
+            position: absolute;
+            top: 5rpx;
+            height: 50rpx;
+            width: 50rpx;
+        }
+    }
 }
 
 .date-now-weekday {

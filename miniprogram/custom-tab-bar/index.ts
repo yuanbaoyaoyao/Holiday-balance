@@ -7,7 +7,7 @@ Component({
       pagePath: "/pages/legalHolidays/legalHolidays",
       iconPath: "/assets/holidays.svg",
       selectedIconPath: "/assets/holidays_selected.svg",
-      text: "我的假期"
+      text: "我的假日"
     }, {
       pagePath: "/pages/date/date",
       iconPath: "/assets/date.svg",
