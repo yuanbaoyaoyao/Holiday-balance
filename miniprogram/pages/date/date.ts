@@ -162,9 +162,11 @@ Page({
                     tempArr.push("")
                 }
                 //判断是否为休息日同时是否在compensatoryLeaveDays以及holidayArr中
-                this.judgeIsRestDay(year, month, countDays)
             }
             datesArr.push(tempArr)
+        }
+        for (let i = 1; i <= countDays; i++) {
+            this.judgeIsRestDay(year, month, i)
         }
         return datesArr
     },
