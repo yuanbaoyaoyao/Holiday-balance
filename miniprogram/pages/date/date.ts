@@ -123,6 +123,7 @@ Page({
         let firstWeekDay = this.GetMonthFirstWeekDay(year, month)
         let lastDayOfMonth = this.GetMonthLastDay(year, month)
         let cycleNumbers = (lastDayOfMonth % 7) != 0 ? parseInt(String(lastDayOfMonth / 7)) + 1 : parseInt(String(lastDayOfMonth / 7));
+        //一个月多少天
         let countDays = 0
         let datesArr = []
         for (let i = 0; i <= cycleNumbers; i++) {
@@ -158,7 +159,6 @@ Page({
                     tempArrItem = this.handleSetDatesItem(tempArrItem, year, month, countDays)
                     tempArr.push(tempArrItem)
                 } else if (countDays >= lastDayOfMonth) {
-                    countDays++
                     tempArr.push("")
                 }
                 //判断是否为休息日同时是否在compensatoryLeaveDays以及holidayArr中
@@ -171,20 +171,24 @@ Page({
     judgeIsRestDay(year, month, day) {
         let judgeDate = year + "/" + month + "/" + day
         let monthDay = month + "/" + day
+        // console.log(`year:${year} month: ${month} day: ${day}`);
         const date = new Date(judgeDate);
         const nowDate = new Date();
         const dayOfWeek = date.getDay();
+        // 判断是否为周末
         if (dayOfWeek === 6 || dayOfWeek === 0) {
             //判断是否调休
             if (!this.data.compensatoryLeaveDays.includes(monthDay)) {
+                // console.log("调休", monthDay)
                 this.data.monthRestDayArr.allRestDays += 1
                 if (nowDate < date) {
                     this.data.monthRestDayArr.remainingRestDays += 1
                 }
             }
         } else {
-            //判断是否加班
+            //判断是否放假，如果放假
             if (this.data.holidayArr.includes(monthDay)) {
+                // console.log("放假：", monthDay)
                 this.data.monthRestDayArr.allRestDays += 1
                 if (nowDate < date) {
                     this.data.monthRestDayArr.remainingRestDays += 1
