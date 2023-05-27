@@ -5,8 +5,10 @@ let chart = null;
 function countRemainDays() {
     let date = new Date()
     let endTime = new Date(date.getFullYear(), 11, 31, 23, 59, 59)
-    let msPerDay = 24 * 60 * 60 * 1000
-    return Math.round((endTime.getTime() - date.getTime()) / msPerDay)
+    let remainingTime = endTime.getTime() - date.getTime()
+  
+    let days = Math.floor(remainingTime / (24 * 60 * 60 * 1000))
+    return days
 }
 
 function isLeapYear(year) {
@@ -325,7 +327,8 @@ Page({
 
     countWeekends() {
         let date = new Date()
-        for (let i = this.data.pastDays; i <= getDaysInYear(); i++) {
+        //在当天的话应该把当天给减去
+        for (let i = this.data.pastDays + 1; i <= getDaysInYear(); i++) {
             let nowDate = new Date(date.getFullYear(), 0, i)
             let currentDay = nowDate.getDay();
             let month = nowDate.getMonth() + 1
@@ -354,7 +357,8 @@ Page({
 
     countHolidays() {
         let date = new Date()
-        for (let i = this.data.pastDays; i <= getDaysInYear(); i++) {
+        //在当天的话应该把当天给减去
+        for (let i = this.data.pastDays + 1; i <= getDaysInYear(); i++) {
             const currentDay = new Date(date.getFullYear(), 0, i).getDay();
             let dateNow = new Date(date.getFullYear(), 0)
             dateNow.setDate(i)

@@ -34,7 +34,6 @@ Page({
             let endYear = new Date().getFullYear()
             let holidayDateArr = holiday.date.split("-")
             if (holiday.startYear != null) {
-
                 startYear = holiday.startYear
                 endYear = holiday.endYear
             }
