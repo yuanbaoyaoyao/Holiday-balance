@@ -1,4 +1,5 @@
 import { getLunar } from "chinese-lunar-calendar";
+import calendar from "../../utils/calendar/index";
 // pages/date/date.ts
 //TODO 自定义假期，可能需要globalData
 
@@ -198,13 +199,25 @@ Page({
         }
     },
     handleSetDatesItem(tempArrItem, year, month, countDays) {
-        let lunar = getLunar(year, month, countDays);
+        let nowCalender = calendar.solar2lunar(year, month, countDays)
         tempArrItem.gregorian = countDays
         tempArrItem.monthDay = month + "/" + countDays
-        tempArrItem.lunar = lunar.dateStr.substr(-2, 2)
+        if (nowCalender.festival != null) {
+            if (nowCalender.festival == '元旦节') {
+                tempArrItem.lunar = '元旦'
+            } else {
+                tempArrItem.lunar = nowCalender.festival
+            }
+        } else if (nowCalender.lunarFestival != null) {
+            tempArrItem.lunar = nowCalender.lunarFestival
+        }
+        else if (nowCalender.Term != null) {
+            tempArrItem.lunar = nowCalender.Term
+        } else {
+            tempArrItem.lunar = nowCalender.IDayCn
+        }
         return tempArrItem
     },
-
     GetMonthFirstWeekDay(year, month) {
         const firstDayOfMonth = new Date(year, month - 1, 1);
         const dayOfWeek = firstDayOfMonth.getDay();

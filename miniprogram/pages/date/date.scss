@@ -15,7 +15,8 @@ $padding-size:40rpx;
 
         .date-now-more {
             position: absolute;
-            top: 5rpx;
+            top: 6rpx;
+            right: -45rpx;
             height: 50rpx;
             width: 50rpx;
         }
@@ -101,7 +102,7 @@ $padding-size:40rpx;
 
 .date-item-lunar {
     text-align: center;
-    font-size: 24rpx;
+    font-size: 22rpx;
 }
 
 .date-analysis {

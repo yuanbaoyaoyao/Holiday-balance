@@ -6,7 +6,7 @@ function countRemainDays() {
     let date = new Date()
     let endTime = new Date(date.getFullYear(), 11, 31, 23, 59, 59)
     let remainingTime = endTime.getTime() - date.getTime()
-  
+
     let days = Math.floor(remainingTime / (24 * 60 * 60 * 1000))
     return days
 }
@@ -322,7 +322,7 @@ Page({
         let date = new Date()
         let startTime = new Date(date.getFullYear(), 0, 1, 0, 0, 0)
         let msPerDay = 24 * 60 * 60 * 1000
-        return Math.round((date.getTime() - startTime) / msPerDay)
+        return Math.ceil((date.getTime() - startTime) / msPerDay)
     },
 
     countWeekends() {
