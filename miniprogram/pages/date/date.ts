@@ -1,4 +1,3 @@
-import { getLunar } from "chinese-lunar-calendar";
 import calendar from "../../utils/calendar/index";
 // pages/date/date.ts
 //TODO 自定义假期，可能需要globalData
