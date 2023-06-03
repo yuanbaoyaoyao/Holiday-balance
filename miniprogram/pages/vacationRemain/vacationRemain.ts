@@ -160,14 +160,6 @@ function initChart(canvas, width, height, dpr) {
 }
 
 Page({
-    onShareAppMessage: function (res) {
-        return {
-            title: 'ECharts 可以在微信小程序中使用啦！',
-            path: '/pages/index/index',
-            success: function () { },
-            fail: function () { }
-        }
-    },
     data: {
         compensatoryLeaveDays: getApp().globalData.compensatoryLeaveDays,
         //holidayArr中假期包含上一年的
@@ -430,5 +422,17 @@ Page({
         //     // 获取 chart 实例的方式
 
         // }, 2000);
+    },
+    onShareAppMessage() {
+        return {
+            title: '我的假日',
+            desc: '假期余额一目了然！快来使用吧！',
+            path: 'pages/vacationRemain/vacationRemain' // 路径，传递参数到指定页面。
+        }
+    },
+    onShareTimeline() {
+        return {
+            title: '我的假日',
+        }
     }
 });

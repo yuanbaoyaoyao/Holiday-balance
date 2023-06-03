@@ -65,6 +65,15 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage() {
-
+        return {
+            title: '我的假日',
+            desc: '这只猫真可爱！快来使用吧！',
+            path: 'pages/about/about' // 路径，传递参数到指定页面。
+        }
+    },
+    onShareTimeline() {
+        return {
+            title: '我的假日',
+        }
     }
 })

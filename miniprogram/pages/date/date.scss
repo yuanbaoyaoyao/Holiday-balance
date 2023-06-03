@@ -64,15 +64,17 @@ $padding-size:40rpx;
     color: white;
     border-radius: 10rpx;
     width: 100%;
-    padding-bottom: 5px;
+    padding-bottom: 10rpx;
 }
 
 .date-item-info {
+    margin-top: 5rpx;
+    padding-bottom: 10rpx;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 10rpx;
     position: relative;
     z-index: 1000;
 }
