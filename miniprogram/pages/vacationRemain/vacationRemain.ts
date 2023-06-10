@@ -238,6 +238,7 @@ Page({
                     series: [
                         {
                             splitNumber: this.handleCountSplitNumber(that.data.remainingHolidays),
+                            // splitNumber: 4,
                             max: that.data.totalHolidays,
                             detail: {
                                 formatter: '剩余假期{value}天',
@@ -305,7 +306,7 @@ Page({
     },
     handleCountSplitNumber(value) {
         // console.log("value:", value)
-        for (let i = 7; i < 10; i++) {
+        for (let i = 4; i < 10; i++) {
             if (value % i == 0) return i
         }
         return 2
