@@ -20,7 +20,9 @@
                     <text style="{{nextFestivalStyle}}">下一个假期</text>
                     <text style="{{countDownDaysStyle}}">还有{{countDownDays}}天</text>
                 </view>
-                <view class="ribbon" wx:if="{{index==currentHolidayIndex}}">当前假期</view>
+                <view class="ribbon-now" wx:if="{{index==currentHolidayIndex}}">
+                    <text>当前假期</text>
+                </view>
             </view>
             <view class="lantern-box" wx:if="{{item.name=='元旦'}}">
                 <view class="lantern">

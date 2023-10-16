@@ -1,29 +1,40 @@
 /* pages/about/about.wxss */
-.about-container {
+
+.more-app-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 20rpx;
-}
-
-.about-me {
-    text-align: center;
-    font-size: 40rpx;
-}
-
-.avatar-container {
+    margin: 40rpx;
+  }
+  .more-app-header text {
+    font-size: large;
+    margin: 30rpx;
+  }
+  .more-app-divider {
     display: flex;
     justify-content: center;
-    margin-top: 20rpx;
-}
-
-.avatar {
-    width: 400rpx;
-    height: 400rpx;
-    margin-bottom: 60rpx;
-}
-.about-other-apps{
-    font-size: 30rpx;
-}
+    width: 100%;
+  }
+  .more-app-divider-line {
+    background-color: #7A7E83;
+    width: calc(100vw - 40rpx);
+    height: 2rpx;
+  }
+  .more-app-item {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    margin: 20rpx;
+  }
+  .more-app-item-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .more-app-item-info-desc {
+    font-size: 25rpx;
+    color: gray;
+  }
+  .more-app-item image {
+    width: 120rpx;
+    height: 120rpx;
+  }

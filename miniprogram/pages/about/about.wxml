@@ -1,13 +1,21 @@
 <!--pages/about/about.wxml-->
-<view class="about-container">
-    <view class="avatar-container">
-        <image class="avatar" mode="aspectFit" src="/assets/cat_avatar.png" />
+<view class="more-app-header">
+    <text>魁地奇探索队</text>
+    <button size="mini" bindtap="handleToFollow">
+        点击关注
+    </button>
+</view>
+<view class="more-app-divider">
+    <view class="more-app-divider-line"></view>
+</view>
+<view class="more-app-content">
+        <view wx:for="{{appList}}" wx:for-item="item" class="more-app-item" wx:key="index" bindtap="handleToMiniProgram">
+        <image src="{{item.appIcon}}"></image>
+        <view class="more-app-item-info">
+            <text class="more-app-item-info-name">{{item.appName}}</text>
+            <text class="more-app-item-info-desc">{{item.appDesc}}</text>
+        </view>
     </view>
-    <view class="about-me">
-        <text class="about-me-title">作者：</text>
-        <text class="about-me-name">炎之魔法师元宝</text>
-    </view>
-    <view class="about-other-apps">（元宝正在研究新的魔法...）</view>
 </view>
 
 <!-- 防止底部自定义导航栏挡住内容 -->

@@ -130,6 +130,33 @@
     }
 }
 
+.ribbon-now {
+    display: inline-block;
+    text-align: center;
+    width: 380rpx;
+    height: 55rpx;
+    line-height: 30px;
+    position: absolute;
+    top: 25rpx;
+    right: -110rpx;
+    z-index: 2;
+    overflow: hidden;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    border: 1px dashed;
+    box-shadow: 0 0 0 3px #57DD43, 0px 21px 5px -18px rgba(0, 0, 0, 0.6);
+    background: #57DD43;
+
+    text {
+        position: absolute;
+        top: -1rpx;
+        right: 120rpx;
+    }
+}
+
 @keyframes showRibbon {
     0% {
         opacity: 0;

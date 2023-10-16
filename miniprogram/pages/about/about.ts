@@ -5,7 +5,11 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        appList: [{
+            appIcon: "/assets/moreAppXiaojiang.png",
+            appName: "小匠工具箱",
+            appDesc: '它就是你的专属多功能工具箱,让你随时随地拥有丰富的小工具资源。'
+        }]
     },
 
     /**
@@ -13,6 +17,18 @@ Page({
      */
     onLoad() {
 
+    },
+
+    handleToFollow() {
+
+    },
+    handleToMiniProgram() {
+        wx.navigateToMiniProgram({
+            appId: 'wxc20bacbaa3d592f5',
+            path: 'pages/index/index', // 不填默认首页
+            extraData: {},
+            success() {}
+        })
     },
 
     /**
@@ -67,7 +83,7 @@ Page({
     onShareAppMessage() {
         return {
             title: '我的假日',
-            desc: '这只猫真可爱！快来使用吧！',
+            desc: '',
             path: 'pages/about/about' // 路径，传递参数到指定页面。
         }
     },
